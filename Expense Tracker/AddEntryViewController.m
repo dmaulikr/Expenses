@@ -51,9 +51,12 @@
             _addSpendSegmented.selectedSegmentIndex = 0;
         }
         _amountTextField.text = [_amountTextField.text stringByReplacingOccurrencesOfString:@"." withString:@","];
+        
         _infoLabel.hidden = YES;
+        _navigationItem.title = @"Edit Entry";
     } else {
         _infoLabel.hidden = NO;
+        _navigationItem.title = @"Add Entry";
     }
 }
 
