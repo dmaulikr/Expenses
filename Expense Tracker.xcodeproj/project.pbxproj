@@ -26,6 +26,8 @@
 		B13953E91960ADFA0066E180 /* ExpenseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953E81960ADFA0066E180 /* ExpenseManager.m */; };
 		B13953EC1960AE1F0066E180 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EB1960AE1F0066E180 /* Expense.m */; };
 		B13953F01960BA810066E180 /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EF1960BA810066E180 /* PieChartView.m */; };
+		B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */; };
+		B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,10 @@
 		B13953EB1960AE1F0066E180 /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
 		B13953EE1960BA810066E180 /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
 		B13953EF1960BA810066E180 /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
+		B15659A819619F5E00CAE8D3 /* AddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEntryViewController.h; sourceTree = "<group>"; };
+		B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
+		B15659AC1961AC5B00CAE8D3 /* NSString+CommaFloatValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaFloatValue.h"; sourceTree = "<group>"; };
+		B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CommaFloatValue.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,12 +136,8 @@
 				B13953B91960AC560066E180 /* AppDelegate.m */,
 				B13953BB1960AC560066E180 /* Main_iPhone.storyboard */,
 				B13953BE1960AC560066E180 /* Main_iPad.storyboard */,
-				B13953EE1960BA810066E180 /* PieChartView.h */,
-				B13953EF1960BA810066E180 /* PieChartView.m */,
-				B13953E41960ADD50066E180 /* StartViewController.h */,
-				B13953E51960ADD50066E180 /* StartViewController.m */,
-				B13953E11960ACB70066E180 /* ExpensesTableViewController.h */,
-				B13953E21960ACB70066E180 /* ExpensesTableViewController.m */,
+				B15659AF1961AC6300CAE8D3 /* Categories */,
+				B15659AB19619F6E00CAE8D3 /* View Controller */,
 				B13953ED1960AE270066E180 /* Model */,
 				B13953C41960AC560066E180 /* Images.xcassets */,
 				B13953B01960AC560066E180 /* Supporting Files */,
@@ -181,6 +183,30 @@
 				B13953E81960ADFA0066E180 /* ExpenseManager.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		B15659AB19619F6E00CAE8D3 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B13953EE1960BA810066E180 /* PieChartView.h */,
+				B13953EF1960BA810066E180 /* PieChartView.m */,
+				B13953E41960ADD50066E180 /* StartViewController.h */,
+				B13953E51960ADD50066E180 /* StartViewController.m */,
+				B15659A819619F5E00CAE8D3 /* AddEntryViewController.h */,
+				B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */,
+				B13953E11960ACB70066E180 /* ExpensesTableViewController.h */,
+				B13953E21960ACB70066E180 /* ExpensesTableViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		B15659AF1961AC6300CAE8D3 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B15659AC1961AC5B00CAE8D3 /* NSString+CommaFloatValue.h */,
+				B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,8 +312,10 @@
 				B13953EC1960AE1F0066E180 /* Expense.m in Sources */,
 				B13953E61960ADD50066E180 /* StartViewController.m in Sources */,
 				B13953E31960ACB70066E180 /* ExpensesTableViewController.m in Sources */,
+				B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */,
 				B13953F01960BA810066E180 /* PieChartView.m in Sources */,
 				B13953B61960AC560066E180 /* main.m in Sources */,
+				B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +530,7 @@
 				B13953DD1960AC560066E180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B13953DE1960AC560066E180 /* Build configuration list for PBXNativeTarget "Expense TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +539,7 @@
 				B13953E01960AC560066E180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

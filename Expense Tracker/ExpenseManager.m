@@ -60,6 +60,15 @@
     [self save];
 }
 
+- (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSInteger)index
+{
+    Expense *expense = [[Expense alloc] init];
+    expense.name = name;
+    expense.amount = amount;
+    [_expenses setObject:expense atIndexedSubscript:index];
+    [self save];
+}
+
 - (void)moveExpenseFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
 {
     Expense *temp = _expenses[fromIndex];
@@ -72,7 +81,7 @@
 #pragma mark - Value Getters
 
 - (float)saldo {
-    NSInteger saldo = 0;
+    float saldo = 0;
     for (Expense *expense in _expenses) {
         saldo = saldo+expense.amount;
     }
@@ -80,7 +89,7 @@
 }
 
 - (float)positives {
-    NSInteger positives = 0;
+    float positives = 0;
     for (Expense *expense in _expenses) {
         if(expense.amount > 0) {
             positives = positives + expense.amount;
@@ -90,7 +99,7 @@
 }
 
 - (float)negatives {
-    NSInteger negatives = 0;
+    float negatives = 0;
     for (Expense *expense in _expenses) {
         if(expense.amount < 0) {
             negatives = negatives - expense.amount;
@@ -100,60 +109,5 @@
 }
 
 
-#pragma mark - AlertView Management
-
-- (void)showAddAlertView:(void(^)())completion
-{
-    _completion = completion;
-    _createdExpensePositive = YES;
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Add money"
-                                                        message:@"Enter a name"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                              otherButtonTitles:@"Next", nil];
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [[alertView textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeAlphabet];
-    [[alertView textFieldAtIndex:0] setAutocapitalizationType:UITextAutocapitalizationTypeWords];
-    [alertView show];
-}
-
-
-
-- (void)showSpendAlertView:(void(^)())completion
-{
-    _completion = completion;
-    _createdExpensePositive = NO;
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Spend money"
-                                                        message:@"Enter a name"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                              otherButtonTitles:@"Next", nil];
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [[alertView textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeAlphabet];
-    [[alertView textFieldAtIndex:0] setAutocapitalizationType:UITextAutocapitalizationTypeWords];
-    [alertView show];
-}
-
-- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        if ([alertView.message isEqualToString:@"Enter a name"]) {
-            _createdExpenseName = [alertView textFieldAtIndex:0].text;
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Add entry"
-                                                                message:@"Enter the amount"
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Cancel"
-                                                      otherButtonTitles:@"Add", nil];
-            alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-            [[alertView textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeDecimalPad];
-            [alertView show];
-        } else if ([alertView.message isEqualToString:@"Enter the amount"]) {
-            int value = [[alertView textFieldAtIndex:0].text floatValue]*100;
-            if (!_createdExpensePositive) value = -value;
-            [self addExpense:value name:_createdExpenseName];
-            _completion();
-        }
-    }
-}
 
 @end

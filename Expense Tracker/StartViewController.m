@@ -10,6 +10,7 @@
 #import "ExpenseManager.h"
 #import "ExpensesTableViewController.h"
 #import "PieChartView.h"
+#import "AddEntryViewController.h"
 
 @interface StartViewController ()
 @property (strong, nonatomic) ExpenseManager *manager;
@@ -49,28 +50,28 @@
     _positivesLabel.text = [NSString stringWithFormat:@"$%.02f", [_manager positives]];
     _negativesLabel.text = [NSString stringWithFormat:@"$%.02f", [_manager negatives]];
     
-    float negative = _manager.negatives / _manager.positives;
-    float positive = 1.0-negative;
-    _pieChartView.sliceArray = @[[NSNumber numberWithFloat:positive], [NSNumber numberWithFloat:negative]];
-    _pieChartView.colorsArray = @[(id)_positivesLabel.textColor.CGColor, (id)_negativesLabel.textColor.CGColor];
-    [_pieChartView setNeedsDisplay];
-}
-
-
-#pragma mark - BarButtons
-
-- (IBAction)addButton:(id)sender
-{
-    [_manager showAddAlertView:^{
-        [self updateInfo];
-    }];
-}
-
-- (IBAction)spendButton:(id)sender
-{
-    [_manager showSpendAlertView:^{
-        [self updateInfo];
-    }];
+    if(_manager.positives == 0.0 && _manager.negatives == 0.0) {
+        _pieChartView.sliceArray = @[@1.0];
+        _pieChartView.colorsArray = @[(id)[UIColor lightGrayColor].CGColor];
+    } else {
+        float negative = _manager.negatives / _manager.positives;
+        float positive = 1.0-negative;
+        if (negative < 0) {
+            negative = 0.0;
+        } else if (negative > 1.0) {
+            negative = 1.0;
+        }
+        
+        if (positive < 0) {
+            positive = 0.0;
+        } else if (positive > 1.0) {
+            positive = 1.0;
+        }
+        
+        _pieChartView.sliceArray = @[[NSNumber numberWithFloat:positive], [NSNumber numberWithFloat:negative]];
+        _pieChartView.colorsArray = @[(id)_positivesLabel.textColor.CGColor, (id)_negativesLabel.textColor.CGColor];
+        [_pieChartView setNeedsDisplay];
+    }
 }
 
 
@@ -82,6 +83,12 @@
     if ([segue.destinationViewController isKindOfClass:[ExpensesTableViewController class]]) {
         ExpensesTableViewController *destination = segue.destinationViewController;
         destination.manager = _manager;
+    } else if([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *destinationNavigation = segue.destinationViewController;
+        if([destinationNavigation.viewControllers[0] isKindOfClass:[AddEntryViewController class]]) {
+            AddEntryViewController *destination = destinationNavigation.viewControllers[0];
+            destination.manager = _manager;
+        }
     }
 }
 

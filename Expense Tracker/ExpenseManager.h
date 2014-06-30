@@ -14,12 +14,10 @@
 
 - (void)addExpense:(NSInteger)amount name:(NSString*)name;
 - (void)removeExpenseAtIndex:(NSInteger)index;
+- (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSInteger)index;
 - (void)moveExpenseFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 
 - (float)saldo;
 - (float)positives;
 - (float)negatives;
-
-- (void)showAddAlertView:(void(^)())completion;
-- (void)showSpendAlertView:(void(^)())completion;
 @end

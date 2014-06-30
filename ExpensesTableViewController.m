@@ -8,6 +8,7 @@
 
 #import "ExpensesTableViewController.h"
 #import "Expense.h"
+#import "AddEntryViewController.h"
 
 @interface ExpensesTableViewController ()
 @property (strong, nonatomic) NSString* createdExpenseName;
@@ -27,6 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -105,5 +112,22 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [super prepareForSegue:segue sender:sender];
+    if([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *destinationNavigation = segue.destinationViewController;
+        if([destinationNavigation.viewControllers[0] isKindOfClass:[AddEntryViewController class]]) {
+            AddEntryViewController *destination = destinationNavigation.viewControllers[0];
+            UITableViewCell *cell = sender;
+            destination.manager = _manager;
+            destination.expense = _manager.expenses[[self.tableView indexPathForCell:cell].row];
+            destination.indexOfExpense = [self.tableView indexPathForCell:cell].row;
+        }
+    }
+}
 
 @end
