@@ -53,10 +53,12 @@
         _amountTextField.text = [_amountTextField.text stringByReplacingOccurrencesOfString:@"." withString:@","];
         
         _infoLabel.hidden = YES;
-        _navigationItem.title = @"Edit Entry";
+        self.navigationItem.title = @"Edit Entry";
+        [self.amountTextField becomeFirstResponder];
     } else {
         _infoLabel.hidden = NO;
-        _navigationItem.title = @"Add Entry";
+        self.navigationItem.title = @"Add Entry";
+        [self.descriptionTextField becomeFirstResponder];
     }
 }
 
