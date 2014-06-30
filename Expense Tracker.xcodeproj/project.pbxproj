@@ -15,13 +15,17 @@
 		B13953BA1960AC560066E180 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953B91960AC560066E180 /* AppDelegate.m */; };
 		B13953BD1960AC560066E180 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13953BB1960AC560066E180 /* Main_iPhone.storyboard */; };
 		B13953C01960AC560066E180 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13953BE1960AC560066E180 /* Main_iPad.storyboard */; };
-		B13953C31960AC560066E180 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953C21960AC560066E180 /* ViewController.m */; };
 		B13953C51960AC560066E180 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B13953C41960AC560066E180 /* Images.xcassets */; };
 		B13953CC1960AC560066E180 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13953CB1960AC560066E180 /* XCTest.framework */; };
 		B13953CD1960AC560066E180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13953A91960AC560066E180 /* Foundation.framework */; };
 		B13953CE1960AC560066E180 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13953AD1960AC560066E180 /* UIKit.framework */; };
 		B13953D61960AC560066E180 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B13953D41960AC560066E180 /* InfoPlist.strings */; };
 		B13953D81960AC560066E180 /* Expense_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953D71960AC560066E180 /* Expense_TrackerTests.m */; };
+		B13953E31960ACB70066E180 /* ExpensesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953E21960ACB70066E180 /* ExpensesTableViewController.m */; };
+		B13953E61960ADD50066E180 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953E51960ADD50066E180 /* StartViewController.m */; };
+		B13953E91960ADFA0066E180 /* ExpenseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953E81960ADFA0066E180 /* ExpenseManager.m */; };
+		B13953EC1960AE1F0066E180 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EB1960AE1F0066E180 /* Expense.m */; };
+		B13953F01960BA810066E180 /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EF1960BA810066E180 /* PieChartView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +51,22 @@
 		B13953B91960AC560066E180 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B13953BC1960AC560066E180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		B13953BF1960AC560066E180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		B13953C11960AC560066E180 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B13953C21960AC560066E180 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B13953C41960AC560066E180 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B13953CA1960AC560066E180 /* Expense TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expense TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13953CB1960AC560066E180 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B13953D31960AC560066E180 /* Expense TrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Expense TrackerTests-Info.plist"; sourceTree = "<group>"; };
 		B13953D51960AC560066E180 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B13953D71960AC560066E180 /* Expense_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Expense_TrackerTests.m; sourceTree = "<group>"; };
+		B13953E11960ACB70066E180 /* ExpensesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpensesTableViewController.h; path = ../ExpensesTableViewController.h; sourceTree = "<group>"; };
+		B13953E21960ACB70066E180 /* ExpensesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpensesTableViewController.m; path = ../ExpensesTableViewController.m; sourceTree = "<group>"; };
+		B13953E41960ADD50066E180 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		B13953E51960ADD50066E180 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		B13953E71960ADFA0066E180 /* ExpenseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseManager.h; sourceTree = "<group>"; };
+		B13953E81960ADFA0066E180 /* ExpenseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseManager.m; sourceTree = "<group>"; };
+		B13953EA1960AE1F0066E180 /* Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
+		B13953EB1960AE1F0066E180 /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
+		B13953EE1960BA810066E180 /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
+		B13953EF1960BA810066E180 /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +130,13 @@
 				B13953B91960AC560066E180 /* AppDelegate.m */,
 				B13953BB1960AC560066E180 /* Main_iPhone.storyboard */,
 				B13953BE1960AC560066E180 /* Main_iPad.storyboard */,
-				B13953C11960AC560066E180 /* ViewController.h */,
-				B13953C21960AC560066E180 /* ViewController.m */,
+				B13953EE1960BA810066E180 /* PieChartView.h */,
+				B13953EF1960BA810066E180 /* PieChartView.m */,
+				B13953E41960ADD50066E180 /* StartViewController.h */,
+				B13953E51960ADD50066E180 /* StartViewController.m */,
+				B13953E11960ACB70066E180 /* ExpensesTableViewController.h */,
+				B13953E21960ACB70066E180 /* ExpensesTableViewController.m */,
+				B13953ED1960AE270066E180 /* Model */,
 				B13953C41960AC560066E180 /* Images.xcassets */,
 				B13953B01960AC560066E180 /* Supporting Files */,
 			);
@@ -153,6 +170,17 @@
 				B13953D41960AC560066E180 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B13953ED1960AE270066E180 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B13953EA1960AE1F0066E180 /* Expense.h */,
+				B13953EB1960AE1F0066E180 /* Expense.m */,
+				B13953E71960ADFA0066E180 /* ExpenseManager.h */,
+				B13953E81960ADFA0066E180 /* ExpenseManager.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,8 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B13953C31960AC560066E180 /* ViewController.m in Sources */,
 				B13953BA1960AC560066E180 /* AppDelegate.m in Sources */,
+				B13953E91960ADFA0066E180 /* ExpenseManager.m in Sources */,
+				B13953EC1960AE1F0066E180 /* Expense.m in Sources */,
+				B13953E61960ADD50066E180 /* StartViewController.m in Sources */,
+				B13953E31960ACB70066E180 /* ExpensesTableViewController.m in Sources */,
+				B13953F01960BA810066E180 /* PieChartView.m in Sources */,
 				B13953B61960AC560066E180 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

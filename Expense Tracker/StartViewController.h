@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  StartViewController.h
 //  Expense Tracker
 //
 //  Created by Hendrik Noeller on 29.06.14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface StartViewController : UIViewController
 
 @end
