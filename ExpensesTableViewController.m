@@ -122,10 +122,14 @@
         UINavigationController *destinationNavigation = segue.destinationViewController;
         if([destinationNavigation.viewControllers[0] isKindOfClass:[AddEntryViewController class]]) {
             AddEntryViewController *destination = destinationNavigation.viewControllers[0];
-            UITableViewCell *cell = sender;
-            destination.manager = _manager;
-            destination.expense = _manager.expenses[[self.tableView indexPathForCell:cell].row];
-            destination.indexOfExpense = [self.tableView indexPathForCell:cell].row;
+            if ([sender isKindOfClass:[UITableViewCell class]]) {
+                UITableViewCell *cell = sender;
+                destination.manager = _manager;
+                destination.expense = _manager.expenses[[self.tableView indexPathForCell:cell].row];
+                destination.indexOfExpense = [self.tableView indexPathForCell:cell].row;
+            } else if ([sender isKindOfClass:[UIBarButtonItem class]]) {
+                destination.manager = _manager;
+            }
         }
     }
 }

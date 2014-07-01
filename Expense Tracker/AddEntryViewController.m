@@ -62,6 +62,13 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    _expense = nil;
+    _indexOfExpense = 0;
+}
+
 - (IBAction)segmentedDidChange:(id)sender
 {
     [self updateInfoLabel];
@@ -101,12 +108,15 @@
     } else {
         [_manager addExpense:amount name:_descriptionTextField.text];
     }
-    _expense = nil;
-    _indexOfExpense = 0;
-    [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self closeModalView];
 }
 
 - (IBAction)cancel:(id)sender
+{
+    [self closeModalView];
+}
+
+- (void)closeModalView
 {
     [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }

@@ -270,7 +270,13 @@
                             <outlet property="delegate" destination="lCb-0R-WVn" id="VP4-bt-RJL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Expenses" id="pOG-0v-tul"/>
+                    <navigationItem key="navigationItem" title="Expenses" id="pOG-0v-tul">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="On4-wa-ne0">
+                            <connections>
+                                <segue destination="8K1-re-Hhi" kind="modal" id="rfA-Wt-ddo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqf-mU-rSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -319,6 +325,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="QoU-Ba-Ohj"/>
+        <segue reference="X4G-4R-A2t"/>
     </inferredMetricsTieBreakers>
 </document>
