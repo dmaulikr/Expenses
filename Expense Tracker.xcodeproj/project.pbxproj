@@ -99,6 +99,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B12BF4DC1962C7AF00B2DDD8 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		B139539D1960AC560066E180 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +139,7 @@
 		B13953AF1960AC560066E180 /* Expense Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				B12BF4DC1962C7AF00B2DDD8 /* iPad */,
 				B13953B81960AC560066E180 /* AppDelegate.h */,
 				B13953B91960AC560066E180 /* AppDelegate.m */,
 				B13953BB1960AC560066E180 /* Main_iPhone.storyboard */,
@@ -448,12 +456,14 @@
 		B13953DC1960AC560066E180 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Expense Tracker/Expense Tracker-Prefix.pch";
 				INFOPLIST_FILE = "Expense Tracker/Expense Tracker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -461,12 +471,14 @@
 		B13953DD1960AC560066E180 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Expense Tracker/Expense Tracker-Prefix.pch";
 				INFOPLIST_FILE = "Expense Tracker/Expense Tracker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -50,9 +50,10 @@
     _positivesLabel.text = [NSString stringWithFormat:@"$%.02f", [_manager positives]];
     _negativesLabel.text = [NSString stringWithFormat:@"$%.02f", [_manager negatives]];
     
-    if(_manager.positives == 0.0 && _manager.negatives == 0.0) {
+    if(_manager.positives <= 0.0 && _manager.negatives == 0.0) {
         _pieChartView.sliceArray = @[@1.0];
         _pieChartView.colorsArray = @[(id)[UIColor lightGrayColor].CGColor];
+        [_pieChartView setNeedsDisplay];
     } else {
         float negative = _manager.negatives / _manager.positives;
         float positive = 1.0-negative;
