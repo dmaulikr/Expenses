@@ -28,6 +28,7 @@
 		B13953F01960BA810066E180 /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EF1960BA810066E180 /* PieChartView.m */; };
 		B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */; };
 		B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */; };
+		B1A1F4661964A44E00F02CFC /* CompletionCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
 		B15659AC1961AC5B00CAE8D3 /* NSString+CommaFloatValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaFloatValue.h"; sourceTree = "<group>"; };
 		B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CommaFloatValue.m"; sourceTree = "<group>"; };
+		B1A1F4641964A44E00F02CFC /* CompletionCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionCircleView.h; sourceTree = "<group>"; };
+		B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionCircleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 			children = (
 				B13953EE1960BA810066E180 /* PieChartView.h */,
 				B13953EF1960BA810066E180 /* PieChartView.m */,
+				B1A1F4641964A44E00F02CFC /* CompletionCircleView.h */,
+				B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */,
 				B13953E41960ADD50066E180 /* StartViewController.h */,
 				B13953E51960ADD50066E180 /* StartViewController.m */,
 				B15659A819619F5E00CAE8D3 /* AddEntryViewController.h */,
@@ -317,6 +322,7 @@
 			files = (
 				B13953BA1960AC560066E180 /* AppDelegate.m in Sources */,
 				B13953E91960ADFA0066E180 /* ExpenseManager.m in Sources */,
+				B1A1F4661964A44E00F02CFC /* CompletionCircleView.m in Sources */,
 				B13953EC1960AE1F0066E180 /* Expense.m in Sources */,
 				B13953E61960ADD50066E180 /* StartViewController.m in Sources */,
 				B13953E31960ACB70066E180 /* ExpensesTableViewController.m in Sources */,

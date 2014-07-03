@@ -11,13 +11,14 @@
 #import "ExpensesTableViewController.h"
 #import "PieChartView.h"
 #import "AddEntryViewController.h"
+#import "CompletionCircleView.h"
 
 @interface StartViewController ()
 @property (strong, nonatomic) ExpenseManager *manager;
 @property (weak, nonatomic) IBOutlet UILabel *saldoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *positivesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *negativesLabel;
-@property (weak, nonatomic) IBOutlet PieChartView *pieChartView;
+@property (weak, nonatomic) IBOutlet CompletionCircleView *pieChartView;
 @end
 
 @implementation StartViewController
@@ -51,10 +52,9 @@
     _negativesLabel.text = [NSString stringWithFormat:@"$%.02f", [_manager negatives]];
     
     if(_manager.positives <= 0.0 && _manager.negatives == 0.0) {
-        _pieChartView.sliceArray = @[@1.0];
-        _pieChartView.colorsArray = @[(id)[UIColor lightGrayColor].CGColor];
-        [_pieChartView setNeedsDisplay];
+        _pieChartView.dataExisting = NO;
     } else {
+        _pieChartView.dataExisting = YES;
         float negative = _manager.negatives / _manager.positives;
         float positive = 1.0-negative;
         if (negative < 0) {
@@ -68,10 +68,7 @@
         } else if (positive > 1.0) {
             positive = 1.0;
         }
-        
-        _pieChartView.sliceArray = @[[NSNumber numberWithFloat:positive], [NSNumber numberWithFloat:negative]];
-        _pieChartView.colorsArray = @[(id)_positivesLabel.textColor.CGColor, (id)_negativesLabel.textColor.CGColor];
-        [_pieChartView setNeedsDisplay];
+        _pieChartView.completion = negative;
     }
 }
 
