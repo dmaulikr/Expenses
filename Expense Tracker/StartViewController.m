@@ -12,6 +12,7 @@
 #import "PieChartView.h"
 #import "AddEntryViewController.h"
 #import "CompletionCircleView.h"
+#import "SettingsViewController.h"
 
 @interface StartViewController ()
 @property (strong, nonatomic) ExpenseManager *manager;
@@ -47,9 +48,9 @@
 
 - (void)updateInfo
 {
-    _saldoLabel.text = [NSString stringWithFormat:@"$%.02f", [_manager saldo]];
-    _positivesLabel.text = [NSString stringWithFormat:@"$%.02f", [_manager positives]];
-    _negativesLabel.text = [NSString stringWithFormat:@"$%.02f", [_manager negatives]];
+    _saldoLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager saldo]];
+    _positivesLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager positives]];
+    _negativesLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager negatives]];
     
     if(_manager.positives <= 0.0 && _manager.negatives == 0.0) {
         _pieChartView.dataExisting = NO;
@@ -87,6 +88,9 @@
             AddEntryViewController *destination = destinationNavigation.viewControllers[0];
             destination.manager = _manager;
         }
+    } else if([segue.destinationViewController isKindOfClass:[SettingsViewController class]]) {
+        SettingsViewController *destination = segue.destinationViewController;
+        destination.manager = _manager;
     }
 }
 

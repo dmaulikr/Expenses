@@ -27,6 +27,15 @@
                                     <segue destination="lCb-0R-WVn" kind="push" id="tIw-Rv-Y2Z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z11-mq-jsb">
+                                <rect key="frame" x="132" y="422" width="57" height="30"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="SpJ-Hk-Xq2" kind="push" id="GtZ-u5-76I"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5g-Hw-a3B" customClass="CompletionCircleView">
                                 <rect key="frame" x="25" y="89" width="270" height="270"/>
                                 <subviews>
@@ -63,8 +72,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="z11-mq-jsb" secondAttribute="centerX" id="9UH-Ib-eQy"/>
                             <constraint firstAttribute="trailing" secondItem="h5g-Hw-a3B" secondAttribute="trailing" constant="25" id="GEe-b0-vYQ"/>
                             <constraint firstItem="h5g-Hw-a3B" firstAttribute="leading" secondItem="9Dk-4n-7xg" secondAttribute="leading" constant="25" id="NwC-nD-OjB"/>
+                            <constraint firstItem="z11-mq-jsb" firstAttribute="top" secondItem="i5j-qd-BiF" secondAttribute="bottom" constant="8" id="Yb2-PU-gd0"/>
                             <constraint firstItem="h5g-Hw-a3B" firstAttribute="top" secondItem="ly3-wB-h6D" secondAttribute="bottom" constant="25" id="hRR-mj-PKG"/>
                             <constraint firstItem="i5j-qd-BiF" firstAttribute="top" secondItem="h5g-Hw-a3B" secondAttribute="bottom" constant="25" id="ofq-pO-AOI"/>
                             <constraint firstAttribute="centerX" secondItem="i5j-qd-BiF" secondAttribute="centerX" id="q5C-8y-VkP"/>
@@ -181,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2R-Vw-NTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="765"/>
+            <point key="canvasLocation" x="2007" y="843"/>
         </scene>
         <!--Expenses Table View Controller - Expenses-->
         <scene sceneID="PcM-Se-APc">
@@ -282,6 +293,72 @@
             </objects>
             <point key="canvasLocation" x="43" y="82"/>
         </scene>
+        <!--Settings View Controller - Settings-->
+        <scene sceneID="tha-G0-10Z">
+            <objects>
+                <viewController id="SpJ-Hk-Xq2" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fcn-2G-RS0"/>
+                        <viewControllerLayoutGuide type="bottom" id="y7j-lE-BKu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rf0-Wv-GGH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-4W-8VU">
+                                <rect key="frame" x="105" y="124" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete all entrys">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAllEntrys:" destination="SpJ-Hk-Xq2" eventType="touchUpInside" id="9EN-Ko-sUl"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ca5-Vo-wME">
+                                <rect key="frame" x="180" y="81" width="120" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="R4v-es-oyL"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="$"/>
+                                    <segment title="€"/>
+                                    <segment title="£"/>
+                                    <segment title="¥"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeCurrency:" destination="SpJ-Hk-Xq2" eventType="valueChanged" id="yn8-n0-j63"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWe-ys-k4E">
+                                <rect key="frame" x="20" y="84" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MWe-ys-k4E" firstAttribute="leading" secondItem="Rf0-Wv-GGH" secondAttribute="leading" constant="20" id="3F7-sL-uXN"/>
+                            <constraint firstItem="MWe-ys-k4E" firstAttribute="top" secondItem="fcn-2G-RS0" secondAttribute="bottom" constant="20" id="7Kn-sW-VxD"/>
+                            <constraint firstItem="QPh-4W-8VU" firstAttribute="top" secondItem="Ca5-Vo-wME" secondAttribute="bottom" constant="15" id="KYg-Xe-DD6"/>
+                            <constraint firstItem="MWe-ys-k4E" firstAttribute="centerY" secondItem="Ca5-Vo-wME" secondAttribute="centerY" constant="-0.5" id="OYN-oM-hiT"/>
+                            <constraint firstAttribute="trailing" secondItem="Ca5-Vo-wME" secondAttribute="trailing" constant="20" id="aHq-YH-ztj"/>
+                            <constraint firstAttribute="centerX" secondItem="QPh-4W-8VU" secondAttribute="centerX" id="bBu-UG-Wxn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="jrb-nL-jKM"/>
+                    <connections>
+                        <outlet property="currencySegmented" destination="Ca5-Vo-wME" id="OIV-14-UEr"/>
+                        <outlet property="deleteButton" destination="QPh-4W-8VU" id="wtS-wV-KGb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rB9-ky-CNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="843"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="M22-No-MjP">
             <objects>
@@ -298,7 +375,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ekl-hu-nbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="765"/>
+            <point key="canvasLocation" x="1584" y="843"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

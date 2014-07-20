@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B13953A51960AC560066E180"
                BuildableName = "Expense Tracker.app"
-               BlueprintName = "Expense Tracker"
-               ReferencedContainer = "container:Expense Tracker.xcodeproj">
+               BlueprintName = "Expenses"
+               ReferencedContainer = "container:Expenses.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B13953C91960AC560066E180"
                BuildableName = "Expense TrackerTests.xctest"
-               BlueprintName = "Expense TrackerTests"
-               ReferencedContainer = "container:Expense Tracker.xcodeproj">
+               BlueprintName = "ExpensesTests"
+               ReferencedContainer = "container:Expenses.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B13953A51960AC560066E180"
             BuildableName = "Expense Tracker.app"
-            BlueprintName = "Expense Tracker"
-            ReferencedContainer = "container:Expense Tracker.xcodeproj">
+            BlueprintName = "Expenses"
+            ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B13953A51960AC560066E180"
             BuildableName = "Expense Tracker.app"
-            BlueprintName = "Expense Tracker"
-            ReferencedContainer = "container:Expense Tracker.xcodeproj">
+            BlueprintName = "Expenses"
+            ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B13953A51960AC560066E180"
             BuildableName = "Expense Tracker.app"
-            BlueprintName = "Expense Tracker"
-            ReferencedContainer = "container:Expense Tracker.xcodeproj">
+            BlueprintName = "Expenses"
+            ReferencedContainer = "container:Expenses.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

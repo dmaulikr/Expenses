@@ -22,6 +22,9 @@
         if (!_expenses) {
             _expenses = [[NSMutableArray alloc] init];
         }
+        if (!_currency) {
+            _currency = @"$";
+        }
     }
     return self;
 }
@@ -30,16 +33,20 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docDir = [paths objectAtIndex:0];
-    NSString *fileName = [NSString stringWithFormat:@"%@/expenses", docDir];
-    _expenses = [NSKeyedUnarchiver unarchiveObjectWithFile:fileName];
+    NSString *expensesFileName = [NSString stringWithFormat:@"%@/expenses", docDir];
+    NSString *currencyFileName = [NSString stringWithFormat:@"%@/currency", docDir];
+    _expenses = [NSKeyedUnarchiver unarchiveObjectWithFile:expensesFileName];
+    _currency = [NSKeyedUnarchiver unarchiveObjectWithFile:currencyFileName];
 }
 
 - (void)save
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docDir = [paths objectAtIndex:0];
-    NSString *fileName = [NSString stringWithFormat:@"%@/expenses", docDir];
-    [NSKeyedArchiver archiveRootObject:_expenses toFile:fileName];
+    NSString *expensesFileName = [NSString stringWithFormat:@"%@/expenses", docDir];
+    NSString *currencyFileName = [NSString stringWithFormat:@"%@/currency", docDir];
+    [NSKeyedArchiver archiveRootObject:_expenses toFile:expensesFileName];
+    [NSKeyedArchiver archiveRootObject:_currency toFile:currencyFileName];
 }
 
 

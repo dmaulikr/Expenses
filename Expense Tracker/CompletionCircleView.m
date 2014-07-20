@@ -42,6 +42,9 @@
         _completingCircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.bounds].CGPath;
         _completingCircleLayer.lineWidth = 10;
         _completingCircleLayer.fillColor = [UIColor colorWithWhite:0.0 alpha:0.0].CGColor;
+        
+//        _completingCircleLayer.anchorPoint = self.center;
+//        _completingCircleLayer.transform = CATransform3DRotate(_completingCircleLayer.transform, 3.1415/2, 0.0, 0.0, 1.0);
     }
     [self updateCompletion];
 }

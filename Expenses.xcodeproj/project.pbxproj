@@ -28,6 +28,7 @@
 		B13953F01960BA810066E180 /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EF1960BA810066E180 /* PieChartView.m */; };
 		B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */; };
 		B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */; };
+		B18E1512197B449500E756A6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18E1511197B449500E756A6 /* SettingsViewController.m */; };
 		B1A1F4661964A44E00F02CFC /* CompletionCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */; };
 /* End PBXBuildFile section */
 
@@ -42,22 +43,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B13953A61960AC560066E180 /* Expense Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expense Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B13953A61960AC560066E180 /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13953A91960AC560066E180 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B13953AB1960AC560066E180 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B13953AD1960AC560066E180 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B13953B11960AC560066E180 /* Expense Tracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Expense Tracker-Info.plist"; sourceTree = "<group>"; };
+		B13953B11960AC560066E180 /* Expenses-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Expenses-Info.plist"; sourceTree = "<group>"; };
 		B13953B31960AC560066E180 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B13953B51960AC560066E180 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B13953B71960AC560066E180 /* Expense Tracker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expense Tracker-Prefix.pch"; sourceTree = "<group>"; };
+		B13953B71960AC560066E180 /* Expenses-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expenses-Prefix.pch"; sourceTree = "<group>"; };
 		B13953B81960AC560066E180 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B13953B91960AC560066E180 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B13953BC1960AC560066E180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		B13953BF1960AC560066E180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		B13953C41960AC560066E180 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B13953CA1960AC560066E180 /* Expense TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expense TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B13953CA1960AC560066E180 /* ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13953CB1960AC560066E180 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B13953D31960AC560066E180 /* Expense TrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Expense TrackerTests-Info.plist"; sourceTree = "<group>"; };
+		B13953D31960AC560066E180 /* ExpensesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExpensesTests-Info.plist"; sourceTree = "<group>"; };
 		B13953D51960AC560066E180 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B13953D71960AC560066E180 /* Expense_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Expense_TrackerTests.m; sourceTree = "<group>"; };
 		B13953E11960ACB70066E180 /* ExpensesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpensesTableViewController.h; path = ../ExpensesTableViewController.h; sourceTree = "<group>"; };
@@ -74,6 +75,8 @@
 		B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
 		B15659AC1961AC5B00CAE8D3 /* NSString+CommaFloatValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaFloatValue.h"; sourceTree = "<group>"; };
 		B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CommaFloatValue.m"; sourceTree = "<group>"; };
+		B18E1510197B449500E756A6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		B18E1511197B449500E756A6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B1A1F4641964A44E00F02CFC /* CompletionCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionCircleView.h; sourceTree = "<group>"; };
 		B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionCircleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,8 +125,8 @@
 		B13953A71960AC560066E180 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B13953A61960AC560066E180 /* Expense Tracker.app */,
-				B13953CA1960AC560066E180 /* Expense TrackerTests.xctest */,
+				B13953A61960AC560066E180 /* Expenses.app */,
+				B13953CA1960AC560066E180 /* ExpensesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,10 +162,10 @@
 		B13953B01960AC560066E180 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B13953B11960AC560066E180 /* Expense Tracker-Info.plist */,
+				B13953B11960AC560066E180 /* Expenses-Info.plist */,
 				B13953B21960AC560066E180 /* InfoPlist.strings */,
 				B13953B51960AC560066E180 /* main.m */,
-				B13953B71960AC560066E180 /* Expense Tracker-Prefix.pch */,
+				B13953B71960AC560066E180 /* Expenses-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -179,7 +182,7 @@
 		B13953D21960AC560066E180 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B13953D31960AC560066E180 /* Expense TrackerTests-Info.plist */,
+				B13953D31960AC560066E180 /* ExpensesTests-Info.plist */,
 				B13953D41960AC560066E180 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -209,6 +212,8 @@
 				B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */,
 				B13953E11960ACB70066E180 /* ExpensesTableViewController.h */,
 				B13953E21960ACB70066E180 /* ExpensesTableViewController.m */,
+				B18E1510197B449500E756A6 /* SettingsViewController.h */,
+				B18E1511197B449500E756A6 /* SettingsViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -225,9 +230,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B13953A51960AC560066E180 /* Expense Tracker */ = {
+		B13953A51960AC560066E180 /* Expenses */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B13953DB1960AC560066E180 /* Build configuration list for PBXNativeTarget "Expense Tracker" */;
+			buildConfigurationList = B13953DB1960AC560066E180 /* Build configuration list for PBXNativeTarget "Expenses" */;
 			buildPhases = (
 				B13953A21960AC560066E180 /* Sources */,
 				B13953A31960AC560066E180 /* Frameworks */,
@@ -237,14 +242,14 @@
 			);
 			dependencies = (
 			);
-			name = "Expense Tracker";
+			name = Expenses;
 			productName = "Expense Tracker";
-			productReference = B13953A61960AC560066E180 /* Expense Tracker.app */;
+			productReference = B13953A61960AC560066E180 /* Expenses.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B13953C91960AC560066E180 /* Expense TrackerTests */ = {
+		B13953C91960AC560066E180 /* ExpensesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B13953DE1960AC560066E180 /* Build configuration list for PBXNativeTarget "Expense TrackerTests" */;
+			buildConfigurationList = B13953DE1960AC560066E180 /* Build configuration list for PBXNativeTarget "ExpensesTests" */;
 			buildPhases = (
 				B13953C61960AC560066E180 /* Sources */,
 				B13953C71960AC560066E180 /* Frameworks */,
@@ -255,9 +260,9 @@
 			dependencies = (
 				B13953D01960AC560066E180 /* PBXTargetDependency */,
 			);
-			name = "Expense TrackerTests";
+			name = ExpensesTests;
 			productName = "Expense TrackerTests";
-			productReference = B13953CA1960AC560066E180 /* Expense TrackerTests.xctest */;
+			productReference = B13953CA1960AC560066E180 /* ExpensesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -274,7 +279,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B13953A11960AC560066E180 /* Build configuration list for PBXProject "Expense Tracker" */;
+			buildConfigurationList = B13953A11960AC560066E180 /* Build configuration list for PBXProject "Expenses" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -287,8 +292,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B13953A51960AC560066E180 /* Expense Tracker */,
-				B13953C91960AC560066E180 /* Expense TrackerTests */,
+				B13953A51960AC560066E180 /* Expenses */,
+				B13953C91960AC560066E180 /* ExpensesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -328,6 +333,7 @@
 				B13953E31960ACB70066E180 /* ExpensesTableViewController.m in Sources */,
 				B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */,
 				B13953F01960BA810066E180 /* PieChartView.m in Sources */,
+				B18E1512197B449500E756A6 /* SettingsViewController.m in Sources */,
 				B13953B61960AC560066E180 /* main.m in Sources */,
 				B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */,
 			);
@@ -346,7 +352,7 @@
 /* Begin PBXTargetDependency section */
 		B13953D01960AC560066E180 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B13953A51960AC560066E180 /* Expense Tracker */;
+			target = B13953A51960AC560066E180 /* Expenses */;
 			targetProxy = B13953CF1960AC560066E180 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -465,10 +471,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Expense Tracker/Expense Tracker-Prefix.pch";
-				INFOPLIST_FILE = "Expense Tracker/Expense Tracker-Info.plist";
+				GCC_PREFIX_HEADER = "Expense Tracker/Expenses-Prefix.pch";
+				INFOPLIST_FILE = "Expense Tracker/Expenses-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Expenses;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -480,10 +486,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Expense Tracker/Expense Tracker-Prefix.pch";
-				INFOPLIST_FILE = "Expense Tracker/Expense Tracker-Info.plist";
+				GCC_PREFIX_HEADER = "Expense Tracker/Expenses-Prefix.pch";
+				INFOPLIST_FILE = "Expense Tracker/Expenses-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Expenses;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -504,8 +510,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Expense TrackerTests/Expense TrackerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Expense TrackerTests/ExpensesTests-Info.plist";
+				PRODUCT_NAME = ExpensesTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -522,8 +528,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Expense Tracker/Expense Tracker-Prefix.pch";
-				INFOPLIST_FILE = "Expense TrackerTests/Expense TrackerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Expense TrackerTests/ExpensesTests-Info.plist";
+				PRODUCT_NAME = ExpensesTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -532,7 +538,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B13953A11960AC560066E180 /* Build configuration list for PBXProject "Expense Tracker" */ = {
+		B13953A11960AC560066E180 /* Build configuration list for PBXProject "Expenses" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B13953D91960AC560066E180 /* Debug */,
@@ -541,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B13953DB1960AC560066E180 /* Build configuration list for PBXNativeTarget "Expense Tracker" */ = {
+		B13953DB1960AC560066E180 /* Build configuration list for PBXNativeTarget "Expenses" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B13953DC1960AC560066E180 /* Debug */,
@@ -550,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B13953DE1960AC560066E180 /* Build configuration list for PBXNativeTarget "Expense TrackerTests" */ = {
+		B13953DE1960AC560066E180 /* Build configuration list for PBXNativeTarget "ExpensesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B13953DF1960AC560066E180 /* Debug */,

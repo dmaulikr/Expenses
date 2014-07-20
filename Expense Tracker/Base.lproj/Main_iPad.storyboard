@@ -5,7 +5,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Start View Controller - Expense Tracker-->
+        <!--Start View Controller - Expenses-->
         <scene sceneID="Urw-Yb-FCE">
             <objects>
                 <viewController id="xYr-Dw-aPo" customClass="StartViewController" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                                     <segue destination="7EG-xO-79s" kind="push" id="dhA-Qn-9vd"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiB-Gj-VB4" customClass="CompletionCircleView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RiB-Gj-VB4" customClass="CompletionCircleView">
                                 <rect key="frame" x="20" y="84" width="729" height="729"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -75,7 +75,7 @@
                             <constraint firstItem="Xmv-0z-zII" firstAttribute="top" secondItem="RiB-Gj-VB4" secondAttribute="bottom" constant="25" id="nFC-8j-Dlp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Expense Tracker" id="ftV-9W-FHq">
+                    <navigationItem key="navigationItem" title="Expenses" id="ftV-9W-FHq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9iw-xd-bKX">
                             <connections>
                                 <segue destination="c63-NG-oqX" kind="modal" modalPresentationStyle="formSheet" id="NN2-15-IgH"/>

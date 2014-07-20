@@ -11,6 +11,7 @@
 
 @interface ExpenseManager : NSObject
 @property (strong, nonatomic) NSMutableArray *expenses;
+@property (strong, nonatomic) NSString *currency;
 
 - (void)addExpense:(NSInteger)amount name:(NSString*)name;
 - (void)removeExpenseAtIndex:(NSInteger)index;
