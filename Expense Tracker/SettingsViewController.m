@@ -61,7 +61,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
-        [_manager.expenses removeAllObjects];
+        [_manager removeAllExpenses];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

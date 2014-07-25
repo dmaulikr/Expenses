@@ -34,6 +34,7 @@
         _backCircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.bounds].CGPath;
         _backCircleLayer.lineWidth = 10;
         _backCircleLayer.fillColor = [UIColor colorWithWhite:0.0 alpha:0.0].CGColor;
+//        _backCircleLayer.fillRule = @"Gradient from light green to original green, top to bottom";
     }
     if (!_completingCircleLayer) {
         _completingCircleLayer = [[CAShapeLayer alloc] init];
@@ -42,6 +43,7 @@
         _completingCircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.bounds].CGPath;
         _completingCircleLayer.lineWidth = 10;
         _completingCircleLayer.fillColor = [UIColor colorWithWhite:0.0 alpha:0.0].CGColor;
+//        _backCircleLayer.fillRule = @"Gradient from slightly desatured, orangish red to 255 red, top to bottom";
         
         _completingCircleLayer.transform = CATransform3DRotate(_completingCircleLayer.transform, -3.141528/2.0, 0.0, 0.0, 1.0);
         _completingCircleLayer.transform = CATransform3DTranslate(_completingCircleLayer.transform, -self.frame.size.width, 0.0, 0.0);
@@ -52,7 +54,7 @@
 - (void)updateCompletion
 {
     if (!_dataExisting) {
-        _backCircleLayer.strokeColor = [UIColor lightGrayColor].CGColor;
+        _backCircleLayer.strokeColor = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
         _completingCircleLayer.strokeEnd = 0.0;
     } else {
         _completingCircleLayer.strokeColor = [UIColor redColor].CGColor;

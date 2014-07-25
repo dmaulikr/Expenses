@@ -17,6 +17,7 @@
 - (void)removeExpenseAtIndex:(NSInteger)index;
 - (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSInteger)index;
 - (void)moveExpenseFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+- (void)removeAllExpenses;
 
 - (float)saldo;
 - (float)positives;

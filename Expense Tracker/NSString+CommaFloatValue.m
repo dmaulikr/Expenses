@@ -12,8 +12,7 @@
 
 - (float)commaFloatValue
 {
-    NSString *newSelf = [self stringByReplacingOccurrencesOfString:@"," withString:@"."];
-    return newSelf.floatValue;
+    return [self stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue;
 }
 
 @end

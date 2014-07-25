@@ -24,7 +24,6 @@
 		B13953E61960ADD50066E180 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953E51960ADD50066E180 /* StartViewController.m */; };
 		B13953E91960ADFA0066E180 /* ExpenseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953E81960ADFA0066E180 /* ExpenseManager.m */; };
 		B13953EC1960AE1F0066E180 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EB1960AE1F0066E180 /* Expense.m */; };
-		B13953F01960BA810066E180 /* PieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EF1960BA810066E180 /* PieChartView.m */; };
 		B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */; };
 		B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */; };
 		B18E1512197B449500E756A6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18E1511197B449500E756A6 /* SettingsViewController.m */; };
@@ -68,8 +67,6 @@
 		B13953E81960ADFA0066E180 /* ExpenseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseManager.m; sourceTree = "<group>"; };
 		B13953EA1960AE1F0066E180 /* Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
 		B13953EB1960AE1F0066E180 /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
-		B13953EE1960BA810066E180 /* PieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartView.h; sourceTree = "<group>"; };
-		B13953EF1960BA810066E180 /* PieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartView.m; sourceTree = "<group>"; };
 		B15659A819619F5E00CAE8D3 /* AddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEntryViewController.h; sourceTree = "<group>"; };
 		B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
 		B15659AC1961AC5B00CAE8D3 /* NSString+CommaFloatValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaFloatValue.h"; sourceTree = "<group>"; };
@@ -110,11 +107,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B12BF4DC1962C7AF00B2DDD8 /* iPad */ = {
+		B1047CF21982AA88008DD769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B1A1F4641964A44E00F02CFC /* CompletionCircleView.h */,
+				B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */,
 			);
-			name = iPad;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B139539D1960AC560066E180 = {
@@ -150,7 +149,6 @@
 		B13953AF1960AC560066E180 /* Expense Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				B12BF4DC1962C7AF00B2DDD8 /* iPad */,
 				B13953B81960AC560066E180 /* AppDelegate.h */,
 				B13953B91960AC560066E180 /* AppDelegate.m */,
 				B13953BB1960AC560066E180 /* Main_iPhone.storyboard */,
@@ -207,10 +205,7 @@
 		B15659AB19619F6E00CAE8D3 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B13953EE1960BA810066E180 /* PieChartView.h */,
-				B13953EF1960BA810066E180 /* PieChartView.m */,
-				B1A1F4641964A44E00F02CFC /* CompletionCircleView.h */,
-				B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */,
+				B1047CF21982AA88008DD769 /* Views */,
 				B13953E41960ADD50066E180 /* StartViewController.h */,
 				B13953E51960ADD50066E180 /* StartViewController.m */,
 				B15659A819619F5E00CAE8D3 /* AddEntryViewController.h */,
@@ -338,7 +333,6 @@
 				B13953E61960ADD50066E180 /* StartViewController.m in Sources */,
 				B13953E31960ACB70066E180 /* ExpensesTableViewController.m in Sources */,
 				B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */,
-				B13953F01960BA810066E180 /* PieChartView.m in Sources */,
 				B18E1512197B449500E756A6 /* SettingsViewController.m in Sources */,
 				B13953B61960AC560066E180 /* main.m in Sources */,
 				B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */,

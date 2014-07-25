@@ -35,7 +35,6 @@
     _addSpendSegmented.selectedSegmentIndex = 1;
     _descriptionTextField.text = @"";
     _amountTextField.text = @"";
-    [self updateInfoLabel];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -51,15 +50,14 @@
             _addSpendSegmented.selectedSegmentIndex = 0;
         }
         _amountTextField.text = [_amountTextField.text stringByReplacingOccurrencesOfString:@"." withString:@","];
-        
-        _infoLabel.hidden = YES;
         self.navigationItem.title = @"Edit Entry";
         [self.amountTextField becomeFirstResponder];
+        
     } else {
-        _infoLabel.hidden = NO;
         self.navigationItem.title = @"Add Entry";
         [self.descriptionTextField becomeFirstResponder];
     }
+    [self updateInfoLabel];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -82,13 +80,22 @@
 - (void)updateInfoLabel
 {
     float value = 0.0;
-    if (_addSpendSegmented.selectedSegmentIndex == 1) {
-        value = _manager.saldo-_amountTextField.text.floatValue;
-    } else if (_addSpendSegmented.selectedSegmentIndex == 0) {
-        
-        value = _manager.saldo+_amountTextField.text.floatValue;
+    if (_expense) {
+        if (_addSpendSegmented.selectedSegmentIndex == 1) {
+            value = _manager.saldo - [_amountTextField.text commaFloatValue] - (_expense.amount / 100);
+        } else if (_addSpendSegmented.selectedSegmentIndex == 0) {
+            
+            value = _manager.saldo + [_amountTextField.text commaFloatValue] - (_expense.amount / 100);
+        }
+    } else {
+        if (_addSpendSegmented.selectedSegmentIndex == 1) {
+            value = _manager.saldo - _amountTextField.text.commaFloatValue;
+        } else if (_addSpendSegmented.selectedSegmentIndex == 0) {
+            
+            value = _manager.saldo + _amountTextField.text.commaFloatValue;
+        }
     }
-    _infoLabel.text = [NSString stringWithFormat:@"%@ %@ %.02f", NSLocalizedString(@"You are left with", @""), _manager.currency, value];
+    _infoLabel.text = [NSString stringWithFormat:@"%@ %@%.02f", NSLocalizedString(@"You are left with", @""), _manager.currency, value];
     _infoLabel.text = [_infoLabel.text stringByReplacingOccurrencesOfString:@"." withString:@","];
     if (value < 0) {
         _infoLabel.textColor = [UIColor redColor];

@@ -37,10 +37,12 @@
     NSString *currencyFileName = [NSString stringWithFormat:@"%@/currency", docDir];
     _expenses = [NSKeyedUnarchiver unarchiveObjectWithFile:expensesFileName];
     _currency = [NSKeyedUnarchiver unarchiveObjectWithFile:currencyFileName];
+    [self updateApplicationTintColor];
 }
 
 - (void)save
 {
+    [self updateApplicationTintColor];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docDir = [paths objectAtIndex:0];
     NSString *expensesFileName = [NSString stringWithFormat:@"%@/expenses", docDir];
@@ -84,6 +86,21 @@
     [self save];
 }
 
+- (void)removeAllExpenses
+{
+    [_expenses removeAllObjects];
+    [self save];
+}
+
+- (void)updateApplicationTintColor
+{
+    if([self percentUsed] >= 1.0) {
+        [[[[UIApplication sharedApplication] delegate] window] setTintColor:[UIColor redColor]];
+    } else {
+        [[[[UIApplication sharedApplication] delegate] window] setTintColor:[UIColor colorWithRed:0.0 green:0.721 blue:0.5215 alpha:1.0]];
+    }
+}
+
 
 #pragma mark - Value Getters
 
@@ -115,6 +132,22 @@
     return negatives/100;
 }
 
+- (float)percentUsed
+{
+    float positives = [self positives];
+    if (positives == 0.0) {
+        return 0.0;
+    }
+    float negatives = [self negatives];
+    float value = negatives / positives;
+    return value;
+}
 
-
+- (NSString *)currency
+{
+    if ([_currency isEqualToString:@""]) {
+        return _currency;
+    }
+    return [_currency stringByAppendingString:@" "];
+}
 @end

@@ -9,7 +9,6 @@
 #import "StartViewController.h"
 #import "ExpenseManager.h"
 #import "ExpensesTableViewController.h"
-#import "PieChartView.h"
 #import "AddEntryViewController.h"
 #import "CompletionCircleView.h"
 #import "SettingsViewController.h"
@@ -37,21 +36,32 @@
 {
     [super viewDidLoad];
     _manager = [[ExpenseManager alloc] init];
-    [self updateInfo];
+    [self updateText];
+    [self updateCircle];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self updateInfo];
+    [self updateText];
+    [self updateCircle];
 }
 
-- (void)updateInfo
+- (void)viewDidAppear:(BOOL)animated
 {
-    _saldoLabel.text = [NSString stringWithFormat:@"%@ %.02f", _manager.currency, [_manager saldo]];
-    _positivesLabel.text = [NSString stringWithFormat:@"%@ %.02f", _manager.currency, [_manager positives]];
-    _negativesLabel.text = [NSString stringWithFormat:@"%@ %.02f", _manager.currency, [_manager negatives]];
+    [super viewDidAppear:animated];
+}
+
+- (void)updateText
+{
+    _saldoLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager saldo]];
+    _positivesLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager positives]];
+    _negativesLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager negatives]];
     
+}
+
+- (void)updateCircle
+{
     if(_manager.positives <= 0.0 && _manager.negatives == 0.0) {
         _pieChartView.dataExisting = NO;
     } else {
