@@ -62,6 +62,7 @@
 {
     if (buttonIndex == 0) {
         [_manager.expenses removeAllObjects];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

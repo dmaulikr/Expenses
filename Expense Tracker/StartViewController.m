@@ -48,9 +48,9 @@
 
 - (void)updateInfo
 {
-    _saldoLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager saldo]];
-    _positivesLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager positives]];
-    _negativesLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager negatives]];
+    _saldoLabel.text = [NSString stringWithFormat:@"%@ %.02f", _manager.currency, [_manager saldo]];
+    _positivesLabel.text = [NSString stringWithFormat:@"%@ %.02f", _manager.currency, [_manager positives]];
+    _negativesLabel.text = [NSString stringWithFormat:@"%@ %.02f", _manager.currency, [_manager negatives]];
     
     if(_manager.positives <= 0.0 && _manager.negatives == 0.0) {
         _pieChartView.dataExisting = NO;

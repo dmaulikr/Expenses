@@ -88,7 +88,7 @@
         
         value = _manager.saldo+_amountTextField.text.floatValue;
     }
-    _infoLabel.text = [NSString stringWithFormat:@"You are left with %@%.02f", _manager.currency, value];
+    _infoLabel.text = [NSString stringWithFormat:@"%@ %@ %.02f", NSLocalizedString(@"You are left with", @""), _manager.currency, value];
     _infoLabel.text = [_infoLabel.text stringByReplacingOccurrencesOfString:@"." withString:@","];
     if (value < 0) {
         _infoLabel.textColor = [UIColor redColor];

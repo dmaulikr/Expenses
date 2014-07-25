@@ -56,7 +56,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellPositive" forIndexPath:indexPath];
         
         cell.textLabel.text = expense.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"+ %@%.02f", _manager.currency, (((float)expense.amount)/100.0)];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"+ %@ %.02f", _manager.currency, (((float)expense.amount)/100.0)];
         
         return cell;
     }
@@ -64,7 +64,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellNegative" forIndexPath:indexPath];
         
         cell.textLabel.text = expense.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"- %@%.02f", _manager.currency, (((float)expense.amount)/-100.0)];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"- %@ %.02f", _manager.currency, (((float)expense.amount)/-100.0)];
         
         return cell;
     }

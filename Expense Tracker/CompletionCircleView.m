@@ -43,8 +43,8 @@
         _completingCircleLayer.lineWidth = 10;
         _completingCircleLayer.fillColor = [UIColor colorWithWhite:0.0 alpha:0.0].CGColor;
         
-//        _completingCircleLayer.anchorPoint = self.center;
-//        _completingCircleLayer.transform = CATransform3DRotate(_completingCircleLayer.transform, 3.1415/2, 0.0, 0.0, 1.0);
+        _completingCircleLayer.transform = CATransform3DRotate(_completingCircleLayer.transform, -3.141528/2.0, 0.0, 0.0, 1.0);
+        _completingCircleLayer.transform = CATransform3DTranslate(_completingCircleLayer.transform, -self.frame.size.width, 0.0, 0.0);
     }
     [self updateCompletion];
 }
@@ -56,7 +56,8 @@
         _completingCircleLayer.strokeEnd = 0.0;
     } else {
         _completingCircleLayer.strokeColor = [UIColor redColor].CGColor;
-        _backCircleLayer.strokeColor = [UIColor colorWithRed:0.0 green:0.65 blue:0.32 alpha:1.0].CGColor;
+        _backCircleLayer.strokeColor = [UIColor colorWithRed:0.0 green:0.721 blue:0.5215 alpha:1.0].CGColor;
+        _completingCircleLayer.strokeStart = 0;
         _completingCircleLayer.strokeEnd = _completion;
     }
 }
