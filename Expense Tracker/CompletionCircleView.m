@@ -32,7 +32,7 @@
         [self.layer addSublayer:_backCircleLayer];
         
         _backCircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.bounds].CGPath;
-        _backCircleLayer.lineWidth = 10;
+        _backCircleLayer.lineWidth = self.frame.size.width / 27;
         _backCircleLayer.fillColor = [UIColor colorWithWhite:0.0 alpha:0.0].CGColor;
 //        _backCircleLayer.fillRule = @"Gradient from light green to original green, top to bottom";
     }
