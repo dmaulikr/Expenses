@@ -6,6 +6,6 @@
   Copyright (c) 2014 Hendrik Noeller. All rights reserved.
 */
 
-"ADD_ENTRY_YOU_ARE_LEFT" = "Dir bleiben";
-"ADD_ENTRY_ADD_ENTRY" = "Eintrag hinzufügen";
-"ADD_ENTRY_EDIT_ENTRY" = "Eintrag bearbeiten";
+"ADD_ENTRY_YOU_ARE_LEFT" = "Te quedan";
+"ADD_ENTRY_ADD_ENTRY" = "Añadir gasto";
+"ADD_ENTRY_EDIT_ENTRY" = "Modificar gasto";

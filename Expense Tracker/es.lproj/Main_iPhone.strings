@@ -1,9 +1,9 @@
 
 /* Class = "IBUINavigationItem"; title = "Expenses"; ObjectID = "33J-oI-gpA"; */
-"33J-oI-gpA.title" = "Expenses";
+"33J-oI-gpA.title" = "Gastos";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "5wT-0E-PZ5"; */
-"5wT-0E-PZ5.text" = "Title";
+"5wT-0E-PZ5.text" = "Nombre";
 
 /* Class = "IBUILabel"; text = "Detail"; ObjectID = "9dJ-Za-Jec"; */
 "9dJ-Za-Jec.text" = "Detail";
@@ -24,7 +24,7 @@
 "Ca5-Vo-wME.segmentTitles[3]" = "¥";
 
 /* Class = "IBUILabel"; text = "Desciption"; ObjectID = "DWk-2J-wKT"; */
-"DWk-2J-wKT.text" = "Description";
+"DWk-2J-wKT.text" = "Descripcion";
 
 /* Class = "IBUILabel"; text = "$800"; ObjectID = "EaD-Eg-Uqe"; */
 "EaD-Eg-Uqe.text" = "$800";
@@ -33,40 +33,40 @@
 "Lpl-Ce-xFk.text" = "$1800";
 
 /* Class = "IBUILabel"; text = "You are left with $10000"; ObjectID = "MQp-71-f4Z"; */
-"MQp-71-f4Z.text" = "You are left with $10000";
+"MQp-71-f4Z.text" = "Quedan $10000";
 
 /* Class = "IBUILabel"; text = "Currency"; ObjectID = "MWe-ys-k4E"; */
-"MWe-ys-k4E.text" = "Currency";
+"MWe-ys-k4E.text" = "Moneda";
 
 /* Class = "IBUIButton"; normalTitle = "Delete all entrys"; ObjectID = "QPh-4W-8VU"; */
-"QPh-4W-8VU.normalTitle" = "Delete all entrys";
+"QPh-4W-8VU.normalTitle" = "Borrar todo";
 
 /* Class = "IBUILabel"; text = "Amount"; ObjectID = "eyC-mb-wbJ"; */
-"eyC-mb-wbJ.text" = "Amount";
+"eyC-mb-wbJ.text" = "Total";
 
 /* Class = "IBUIButton"; normalTitle = "Edit Expenses"; ObjectID = "i5j-qd-BiF"; */
-"i5j-qd-BiF.normalTitle" = "Edit Expenses";
+"i5j-qd-BiF.normalTitle" = "Modificar gastos";
 
 /* Class = "IBUINavigationItem"; title = "Settings"; ObjectID = "jrb-nL-jKM"; */
-"jrb-nL-jKM.title" = "Settings";
+"jrb-nL-jKM.title" = "Ajustes";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "kl4-8B-ah7"; */
 "kl4-8B-ah7.text" = "Title";
 
 /* Class = "IBUISegmentedControl"; oJF-zu-ljT.segmentTitles[0] = "Add Money"; ObjectID = "oJF-zu-ljT"; */
-"oJF-zu-ljT.segmentTitles[0]" = "Add Money";
+"oJF-zu-ljT.segmentTitles[0]" = "Añadir monedas";
 
 /* Class = "IBUISegmentedControl"; oJF-zu-ljT.segmentTitles[1] = "Spend Money"; ObjectID = "oJF-zu-ljT"; */
-"oJF-zu-ljT.segmentTitles[1]" = "Spend Money";
+"oJF-zu-ljT.segmentTitles[1]" = "Gastar monedas";
 
 /* Class = "IBUILabel"; text = "Detail"; ObjectID = "oew-hO-DPA"; */
 "oew-hO-DPA.text" = "Detail";
 
-/* Class = "IBUINavigationItem"; title = "Expenses"; ObjectID = "pOG-0v-tul"; */
-"pOG-0v-tul.title" = "Edit";
+/* Class = "IBUINavigationItem"; title = "Edit"; ObjectID = "pOG-0v-tul"; */
+"pOG-0v-tul.title" = "Modificar";
 
 /* Class = "IBUINavigationItem"; title = "Add Entry"; ObjectID = "ryf-q4-bZX"; */
-"ryf-q4-bZX.title" = "Add Entry";
+"ryf-q4-bZX.title" = "Añadir gasto";
 
 /* Class = "IBUIButton"; normalTitle = "Settings"; ObjectID = "z11-mq-jsb"; */
-"z11-mq-jsb.normalTitle" = "Settings";
+"z11-mq-jsb.normalTitle" = "Ajustes";

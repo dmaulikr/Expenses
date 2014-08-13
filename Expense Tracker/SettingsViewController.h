@@ -1,6 +1,6 @@
 //
 //  SettingsViewController.h
-//  Expense Tracker
+//  Expenses
 //
 //  Created by Hendrik Noeller on 19.07.14.
 //  Copyright (c) 2014 Hendrik Noeller. All rights reserved.

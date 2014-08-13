@@ -1,6 +1,6 @@
 //
 //  ExpensesTableViewController.m
-//  Expense Tracker
+//  Expenses
 //
 //  Created by Hendrik Noeller on 29.06.14.
 //  Copyright (c) 2014 Hendrik Noeller. All rights reserved.
@@ -56,7 +56,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellPositive" forIndexPath:indexPath];
         
         cell.textLabel.text = expense.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"+ %@%.02f", _manager.currency, (((float)expense.amount)/100.0)];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"+ %@%.02f", [_manager currencyWithSpace], (((float)expense.amount)/100.0)];
         
         return cell;
     }
@@ -64,7 +64,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellNegative" forIndexPath:indexPath];
         
         cell.textLabel.text = expense.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"- %@%.02f", _manager.currency, (((float)expense.amount)/-100.0)];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"- %@%.02f", [_manager currencyWithSpace], (((float)expense.amount)/-100.0)];
         
         return cell;
     }

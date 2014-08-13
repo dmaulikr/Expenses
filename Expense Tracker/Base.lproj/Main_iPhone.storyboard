@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8z1-2a-fNG">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Start View Controller - Expense Tracker-->
+        <!--Start View Controller - Expenses-->
         <scene sceneID="SKR-PY-mP6">
             <objects>
                 <viewController id="rum-jj-juL" customClass="StartViewController" sceneMemberID="viewController">
@@ -81,7 +80,7 @@
                             <constraint firstAttribute="centerX" secondItem="i5j-qd-BiF" secondAttribute="centerX" id="q5C-8y-VkP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Expense Tracker" id="33J-oI-gpA">
+                    <navigationItem key="navigationItem" title="Expenses" id="33J-oI-gpA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ODC-Dc-Krg">
                             <connections>
                                 <segue destination="8K1-re-Hhi" kind="modal" id="X4G-4R-A2t"/>
@@ -192,9 +191,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2R-Vw-NTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2007" y="843"/>
+            <point key="canvasLocation" x="2001" y="77"/>
         </scene>
-        <!--Expenses Table View Controller - Expenses-->
+        <!--Expenses Table View Controller - Edit-->
         <scene sceneID="PcM-Se-APc">
             <objects>
                 <tableViewController id="lCb-0R-WVn" customClass="ExpensesTableViewController" sceneMemberID="viewController">
@@ -263,7 +262,7 @@
                             <outlet property="delegate" destination="lCb-0R-WVn" id="VP4-bt-RJL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Expenses" id="pOG-0v-tul">
+                    <navigationItem key="navigationItem" title="Edit" id="pOG-0v-tul">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="On4-wa-ne0">
                             <connections>
                                 <segue destination="8K1-re-Hhi" kind="modal" id="rfA-Wt-ddo"/>
@@ -307,7 +306,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-4W-8VU">
                                 <rect key="frame" x="105" y="124" width="110" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Delete all entrys">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -316,10 +314,9 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ca5-Vo-wME">
-                                <rect key="frame" x="180" y="81" width="120" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="150" y="81" width="150" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="R4v-es-oyL"/>
+                                    <constraint firstAttribute="width" constant="150" id="R4v-es-oyL"/>
                                 </constraints>
                                 <segments>
                                     <segment title="$"/>
@@ -334,7 +331,6 @@
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWe-ys-k4E">
                                 <rect key="frame" x="20" y="84" width="70" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -376,7 +372,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ekl-hu-nbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584" y="843"/>
+            <point key="canvasLocation" x="1578" y="77"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -385,6 +381,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="X4G-4R-A2t"/>
+        <segue reference="rfA-Wt-ddo"/>
     </inferredMetricsTieBreakers>
 </document>

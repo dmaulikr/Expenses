@@ -1,5 +1,5 @@
 
-/* Class = "IBUINavigationItem"; title = "Expense Tracker"; ObjectID = "33J-oI-gpA"; */
+/* Class = "IBUINavigationItem"; title = "Expenses"; ObjectID = "33J-oI-gpA"; */
 "33J-oI-gpA.title" = "Ausgaben";
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "5wT-0E-PZ5"; */
@@ -63,7 +63,7 @@
 "oew-hO-DPA.text" = "Details";
 
 /* Class = "IBUINavigationItem"; title = "Expenses"; ObjectID = "pOG-0v-tul"; */
-"pOG-0v-tul.title" = "Ausgaben";
+"pOG-0v-tul.title" = "Bearbeiten";
 
 /* Class = "IBUINavigationItem"; title = "Add Entry"; ObjectID = "ryf-q4-bZX"; */
 "ryf-q4-bZX.title" = "Eintrag hinzufügen";

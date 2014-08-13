@@ -1,6 +1,6 @@
 //
 //  AddEntryViewController.m
-//  Expense Tracker
+//  Expenses
 //
 //  Created by Hendrik Noeller on 30.06.14.
 //  Copyright (c) 2014 Hendrik Noeller. All rights reserved.
@@ -50,11 +50,11 @@
             _addSpendSegmented.selectedSegmentIndex = 0;
         }
         _amountTextField.text = [_amountTextField.text stringByReplacingOccurrencesOfString:@"." withString:@","];
-        self.navigationItem.title = @"Edit Entry";
+        self.navigationItem.title = NSLocalizedString(@"ADD_ENTRY_EDIT_ENTRY", @"");
         [self.amountTextField becomeFirstResponder];
         
     } else {
-        self.navigationItem.title = @"Add Entry";
+        self.navigationItem.title = NSLocalizedString(@"ADD_ENTRY_ADD_ENTRY", @"");
         [self.descriptionTextField becomeFirstResponder];
     }
     [self updateInfoLabel];
@@ -82,10 +82,10 @@
     float value = 0.0;
     if (_expense) {
         if (_addSpendSegmented.selectedSegmentIndex == 1) {
-            value = _manager.saldo - [_amountTextField.text commaFloatValue] - (_expense.amount / 100);
+            value = _manager.saldo - [_amountTextField.text commaFloatValue] - (_expense.amount / 100.0);
         } else if (_addSpendSegmented.selectedSegmentIndex == 0) {
             
-            value = _manager.saldo + [_amountTextField.text commaFloatValue] - (_expense.amount / 100);
+            value = _manager.saldo + [_amountTextField.text commaFloatValue] - (_expense.amount / 100.0);
         }
     } else {
         if (_addSpendSegmented.selectedSegmentIndex == 1) {
@@ -95,7 +95,7 @@
             value = _manager.saldo + _amountTextField.text.commaFloatValue;
         }
     }
-    _infoLabel.text = [NSString stringWithFormat:@"%@ %@%.02f", NSLocalizedString(@"You are left with", @""), _manager.currency, value];
+    _infoLabel.text = [NSString stringWithFormat:@"%@ %@%.02f", NSLocalizedString(@"ADD_ENTRY_YOU_ARE_LEFT", @""), [_manager currencyWithSpace], value];
     _infoLabel.text = [_infoLabel.text stringByReplacingOccurrencesOfString:@"." withString:@","];
     if (value < 0) {
         _infoLabel.textColor = [UIColor redColor];

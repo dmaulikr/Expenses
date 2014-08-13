@@ -1,6 +1,6 @@
 //
 //  ExpenseManager.m
-//  Expense Tracker
+//  Expenses
 //
 //  Created by Hendrik Noeller on 29.06.14.
 //  Copyright (c) 2014 Hendrik Noeller. All rights reserved.
@@ -23,8 +23,15 @@
             _expenses = [[NSMutableArray alloc] init];
         }
         if (!_currency) {
-            _currency = @"$";
-        }
+            if ([NSLocaleIdentifier isEqualToString:@"en_US"]) {
+                _currency = @"$";
+            } else if ([NSLocaleIdentifier isEqualToString:@"jp_JP"]) {
+                _currency = @"¥";
+            } else if ([NSLocaleIdentifier isEqualToString:@"en_GB"]) {
+                _currency = @"£";
+            } else
+                _currency = @"€";
+            }
     }
     return self;
 }
@@ -98,6 +105,7 @@
         [[[[UIApplication sharedApplication] delegate] window] setTintColor:[UIColor redColor]];
     } else {
         [[[[UIApplication sharedApplication] delegate] window] setTintColor:[UIColor colorWithRed:0.0 green:0.721 blue:0.5215 alpha:1.0]];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     }
 }
 
@@ -143,11 +151,18 @@
     return value;
 }
 
-- (NSString *)currency
+- (NSString *)currencyWithSpace
 {
     if ([_currency isEqualToString:@""]) {
         return _currency;
     }
     return [_currency stringByAppendingString:@" "];
 }
+
+- (void)setCurrency:(NSString *)currency
+{
+    _currency = currency;
+    [self save];
+}
+
 @end

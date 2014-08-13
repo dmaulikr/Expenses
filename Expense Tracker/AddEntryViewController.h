@@ -1,6 +1,6 @@
 //
 //  AddEntryViewController.h
-//  Expense Tracker
+//  Expenses
 //
 //  Created by Hendrik Noeller on 30.06.14.
 //  Copyright (c) 2014 Hendrik Noeller. All rights reserved.

@@ -75,6 +75,10 @@
 		B18E1511197B449500E756A6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B1A1F4641964A44E00F02CFC /* CompletionCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionCircleView.h; sourceTree = "<group>"; };
 		B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionCircleView.m; sourceTree = "<group>"; };
+		B1C1D12D199B7E4A00FC886E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		B1C1D12E199B7E4B00FC886E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B1C1D12F199B7E4B00FC886E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B1C1D130199B7E4B00FC886E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1E2E1BF197B9E380024B421 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		B1E2E1C1197B9FFC0024B421 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		B1E2E1C2197B9FFC0024B421 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 				en,
 				Base,
 				de,
+				es,
 			);
 			mainGroup = B139539D1960AC560066E180;
 			productRefGroup = B13953A71960AC560066E180 /* Products */;
@@ -363,6 +368,7 @@
 			children = (
 				B13953B31960AC560066E180 /* en */,
 				B1E2E1C2197B9FFC0024B421 /* de */,
+				B1C1D12F199B7E4B00FC886E /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				B13953BC1960AC560066E180 /* Base */,
 				B1E2E1BF197B9E380024B421 /* en */,
 				B1E2E1C1197B9FFC0024B421 /* de */,
+				B1C1D12D199B7E4A00FC886E /* es */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -382,6 +389,7 @@
 			children = (
 				B13953D51960AC560066E180 /* en */,
 				B1E2E1C3197B9FFC0024B421 /* de */,
+				B1C1D130199B7E4B00FC886E /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -391,6 +399,7 @@
 			children = (
 				B1E2E1C6197BA17E0024B421 /* de */,
 				B1E2E1D0197BA2670024B421 /* en */,
+				B1C1D12E199B7E4B00FC886E /* es */,
 			);
 			name = Localizable.strings;
 			path = ..;

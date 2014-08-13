@@ -1,6 +1,6 @@
 //
 //  StartViewController.m
-//  Expense Tracker
+//  Expenses
 //
 //  Created by Hendrik Noeller on 29.06.14.
 //  Copyright (c) 2014 Hendrik Noeller. All rights reserved.
@@ -54,9 +54,9 @@
 
 - (void)updateText
 {
-    _saldoLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager saldo]];
-    _positivesLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager positives]];
-    _negativesLabel.text = [NSString stringWithFormat:@"%@%.02f", _manager.currency, [_manager negatives]];
+    _saldoLabel.text = [NSString stringWithFormat:@"%@%.02f", [_manager currencyWithSpace], [_manager saldo]];
+    _positivesLabel.text = [NSString stringWithFormat:@"%@%.02f", [_manager currencyWithSpace], [_manager positives]];
+    _negativesLabel.text = [NSString stringWithFormat:@"%@%.02f", [_manager currencyWithSpace], [_manager negatives]];
     
 }
 

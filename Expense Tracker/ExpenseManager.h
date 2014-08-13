@@ -1,6 +1,6 @@
 //
 //  ExpenseManager.h
-//  Expense Tracker
+//  Expenses
 //
 //  Created by Hendrik Noeller on 29.06.14.
 //  Copyright (c) 2014 Hendrik Noeller. All rights reserved.
@@ -12,6 +12,7 @@
 @interface ExpenseManager : NSObject
 @property (strong, nonatomic) NSMutableArray *expenses;
 @property (strong, nonatomic) NSString *currency;
+- (NSString *)currencyWithSpace;
 
 - (void)addExpense:(NSInteger)amount name:(NSString*)name;
 - (void)removeExpenseAtIndex:(NSInteger)index;

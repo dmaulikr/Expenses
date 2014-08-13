@@ -1,6 +1,6 @@
 //
 //  CompletionCircleView.m
-//  Expense Tracker
+//  Expenses
 //
 //  Created by Hendrik Noeller on 02.07.14.
 //  Copyright (c) 2014 Hendrik Noeller. All rights reserved.
