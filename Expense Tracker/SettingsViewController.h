@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ExpenseManager.h"
 
-@interface SettingsViewController : UIViewController <UIActionSheetDelegate>
+@interface SettingsViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) ExpenseManager* manager;
 @end

@@ -9,3 +9,7 @@
 "ADD_ENTRY_YOU_ARE_LEFT" = "Te quedan";
 "ADD_ENTRY_ADD_ENTRY" = "Añadir gasto";
 "ADD_ENTRY_EDIT_ENTRY" = "Modificar gasto";
+"SETTINGS_CUSTOM_TITLE" = "Propia Moneda";
+"SETTINGS_CUSTOM_MESSAGE" = "Selectar el símbolo de tu moneda";
+"SETTINGS_CUSTOM_CANCEL" = "Cancelar";
+"SETTINGS_CUSTOM_OK" = "OK";

@@ -9,3 +9,7 @@
 "ADD_ENTRY_YOU_ARE_LEFT" = "Dir bleiben";
 "ADD_ENTRY_ADD_ENTRY" = "Eintrag hinzufügen";
 "ADD_ENTRY_EDIT_ENTRY" = "Eintrag bearbeiten";
+"SETTINGS_CUSTOM_TITLE" = "Eigene Währung";
+"SETTINGS_CUSTOM_MESSAGE" = "Gib das Symbol deiner Währung ein";
+"SETTINGS_CUSTOM_CANCEL" = "Abbrechen";
+"SETTINGS_CUSTOM_OK" = "OK";

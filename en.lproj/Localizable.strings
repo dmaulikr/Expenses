@@ -9,3 +9,7 @@
 "ADD_ENTRY_YOU_ARE_LEFT" = "You are left with";
 "ADD_ENTRY_ADD_ENTRY" = "Add Entry";
 "ADD_ENTRY_EDIT_ENTRY" = "Edit Entry";
+"SETTINGS_CUSTOM_TITLE" = "Custom Currency";
+"SETTINGS_CUSTOM_MESSAGE" = "Enter the symbol of your currency";
+"SETTINGS_CUSTOM_CANCEL" = "Cancel";
+"SETTINGS_CUSTOM_OK" = "OK";
