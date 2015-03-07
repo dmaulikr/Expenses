@@ -1,0 +1,72 @@
+
+/* Class = "IBUIButton"; normalTitle = "+"; ObjectID = "84V-tW-eQm"; */
+"84V-tW-eQm.normalTitle" = "+";
+
+/* Class = "IBUILabel"; text = "Currency"; ObjectID = "CMx-Tg-PqY"; */
+"CMx-Tg-PqY.text" = "Currency";
+
+/* Class = "IBUILabel"; text = "Desciption"; ObjectID = "DWk-2J-wKT"; */
+"DWk-2J-wKT.text" = "Desciption";
+
+/* Class = "IBUILabel"; text = "400$"; ObjectID = "GaB-Es-aam"; */
+"GaB-Es-aam.text" = "400$";
+
+/* Class = "IBUILabel"; text = "You are left with $10000"; ObjectID = "MQp-71-f4Z"; */
+"MQp-71-f4Z.text" = "You are left with $10000";
+
+/* Class = "IBUILabel"; text = "Name"; ObjectID = "MWe-ys-k4E"; */
+"MWe-ys-k4E.text" = "Name";
+
+/* Class = "IBUIBarButtonItem"; title = "Settings"; ObjectID = "MpP-tk-Jtw"; */
+"MpP-tk-Jtw.title" = "Settings";
+
+/* Class = "IBUIButton"; normalTitle = "Delete all entrys"; ObjectID = "QPh-4W-8VU"; */
+"QPh-4W-8VU.normalTitle" = "Delete all entrys";
+
+/* Class = "IBUILabel"; text = "McDoanlds (40$)"; ObjectID = "YQJ-EX-7DN"; */
+"YQJ-EX-7DN.text" = "McDoanlds (40$)";
+
+/* Class = "IBUINavigationItem"; title = "Expenses"; ObjectID = "dIf-6f-QRz"; */
+"dIf-6f-QRz.title" = "Expenses";
+
+/* Class = "IBUILabel"; text = "Amount"; ObjectID = "eyC-mb-wbJ"; */
+"eyC-mb-wbJ.text" = "Amount";
+
+/* Class = "IBUISegmentedControl"; hpr-95-9ib.segmentTitles[0] = "$"; ObjectID = "hpr-95-9ib"; */
+"hpr-95-9ib.segmentTitles[0]" = "$";
+
+/* Class = "IBUISegmentedControl"; hpr-95-9ib.segmentTitles[1] = "€"; ObjectID = "hpr-95-9ib"; */
+"hpr-95-9ib.segmentTitles[1]" = "€";
+
+/* Class = "IBUISegmentedControl"; hpr-95-9ib.segmentTitles[2] = "£"; ObjectID = "hpr-95-9ib"; */
+"hpr-95-9ib.segmentTitles[2]" = "£";
+
+/* Class = "IBUISegmentedControl"; hpr-95-9ib.segmentTitles[3] = "¥"; ObjectID = "hpr-95-9ib"; */
+"hpr-95-9ib.segmentTitles[3]" = "¥";
+
+/* Class = "IBUINavigationItem"; title = "Settings"; ObjectID = "jrb-nL-jKM"; */
+"jrb-nL-jKM.title" = "Settings";
+
+/* Class = "IBUIButton"; normalTitle = "+"; ObjectID = "kM8-0k-fZg"; */
+"kM8-0k-fZg.normalTitle" = "+";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "kl4-8B-ah7"; */
+"kl4-8B-ah7.text" = "Title";
+
+/* Class = "IBUISegmentedControl"; oJF-zu-ljT.segmentTitles[0] = "Add Money"; ObjectID = "oJF-zu-ljT"; */
+"oJF-zu-ljT.segmentTitles[0]" = "Add Money";
+
+/* Class = "IBUISegmentedControl"; oJF-zu-ljT.segmentTitles[1] = "Spend Money"; ObjectID = "oJF-zu-ljT"; */
+"oJF-zu-ljT.segmentTitles[1]" = "Spend Money";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "oew-hO-DPA"; */
+"oew-hO-DPA.text" = "Detail";
+
+/* Class = "IBUINavigationItem"; title = "Edit"; ObjectID = "pOG-0v-tul"; */
+"pOG-0v-tul.title" = "Edit";
+
+/* Class = "IBUINavigationItem"; title = "Add Entry"; ObjectID = "ryf-q4-bZX"; */
+"ryf-q4-bZX.title" = "Add Entry";
+
+/* Class = "IBUILabel"; text = "Mein Konto"; ObjectID = "tYo-V4-6dh"; */
+"tYo-V4-6dh.text" = "My Account";

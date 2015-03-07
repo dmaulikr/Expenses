@@ -6,6 +6,8 @@
   Copyright (c) 2014 Hendrik Noeller. All rights reserved.
 */
 
+"ACCOUNT_CELL_NO_EXPENSES" = "Keine Ausgaben";
+"ACCOUNT_CELL_LAST_EXPENSE" = "Letztes";
 "ADD_ENTRY_YOU_ARE_LEFT" = "Dir bleiben";
 "ADD_ENTRY_ADD_ENTRY" = "Eintrag hinzufügen";
 "ADD_ENTRY_EDIT_ENTRY" = "Eintrag bearbeiten";

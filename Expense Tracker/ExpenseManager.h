@@ -7,20 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Account.h"
 #import "Expense.h"
 
 @interface ExpenseManager : NSObject
-@property (strong, nonatomic) NSMutableArray *expenses;
-@property (strong, nonatomic) NSString *currency;
-- (NSString *)currencyWithSpace;
+@property (strong, nonatomic) NSMutableArray *accounts;
 
-- (void)addExpense:(NSInteger)amount name:(NSString*)name;
-- (void)removeExpenseAtIndex:(NSInteger)index;
-- (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSInteger)index;
-- (void)moveExpenseFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
-- (void)removeAllExpenses;
++ (ExpenseManager*)sharedManager;
+- (void)save;
 
-- (float)saldo;
-- (float)positives;
-- (float)negatives;
+- (void)addAccount;
+- (void)removeAccountAtIndex:(NSInteger)index;
+
 @end

@@ -8,17 +8,16 @@
 
 #import "StartViewController.h"
 #import "ExpenseManager.h"
+#import "Account.h"
+
 #import "ExpensesTableViewController.h"
-#import "AddEntryViewController.h"
-#import "CompletionCircleView.h"
 #import "SettingsViewController.h"
+
+#import "CompletionCircleView.h"
+#import "AccountCell.h"
 
 @interface StartViewController ()
 @property (strong, nonatomic) ExpenseManager *manager;
-@property (weak, nonatomic) IBOutlet UILabel *saldoLabel;
-@property (weak, nonatomic) IBOutlet UILabel *positivesLabel;
-@property (weak, nonatomic) IBOutlet UILabel *negativesLabel;
-@property (weak, nonatomic) IBOutlet CompletionCircleView *pieChartView;
 @end
 
 @implementation StartViewController
@@ -35,72 +34,89 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _manager = [[ExpenseManager alloc] init];
-    [self updateText];
-    [self updateCircle];
+    self.manager = [ExpenseManager sharedManager];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self updateText];
-    [self updateCircle];
+    [self.tableView reloadData];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+#pragma mark - UITableView Data Source & Delegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [super viewDidAppear:animated];
+    return 2;
 }
 
-- (void)updateText
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    _saldoLabel.text = [NSString stringWithFormat:@"%@%.02f", [_manager currencyWithSpace], [_manager saldo]];
-    _positivesLabel.text = [NSString stringWithFormat:@"%@%.02f", [_manager currencyWithSpace], [_manager positives]];
-    _negativesLabel.text = [NSString stringWithFormat:@"%@%.02f", [_manager currencyWithSpace], [_manager negatives]];
-    
+    if (section == 0) {
+        return [self.manager.accounts count];
+    }
+    return 1;
 }
 
-- (void)updateCircle
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(_manager.positives <= 0.0 && _manager.negatives == 0.0) {
-        _pieChartView.dataExisting = NO;
-    } else {
-        _pieChartView.dataExisting = YES;
-        float negative = _manager.negatives / _manager.positives;
-        float positive = 1.0-negative;
-        if (negative < 0) {
-            negative = 0.0;
-        } else if (negative > 1.0) {
-            negative = 1.0;
-        }
+    if (indexPath.section == 0) {
+        //Account Cell
+        AccountCell* cell = [tableView dequeueReusableCellWithIdentifier:@"AccountCell" forIndexPath:indexPath];
+        cell.account = self.manager.accounts[indexPath.row];
         
-        if (positive < 0) {
-            positive = 0.0;
-        } else if (positive > 1.0) {
-            positive = 1.0;
-        }
-        _pieChartView.completion = negative;
+        return cell;
+    } else {
+        //Last Cell = Plus cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddCell" forIndexPath:indexPath];
+        return cell;
+        
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.manager removeAccountAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 
 
-#pragma mark - Navigation
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        [self addAccount];
+    }
+}
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
+#pragma mark - Storyboarding
+
+- (IBAction)addAccount
+{
+    [self.manager addAccount];
+    [self performSegueWithIdentifier:@"Settings" sender:self];
+    
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.destinationViewController isKindOfClass:[ExpensesTableViewController class]]) {
-        ExpensesTableViewController *destination = segue.destinationViewController;
-        destination.manager = _manager;
-    } else if([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
-        UINavigationController *destinationNavigation = segue.destinationViewController;
-        if([destinationNavigation.viewControllers[0] isKindOfClass:[AddEntryViewController class]]) {
-            AddEntryViewController *destination = destinationNavigation.viewControllers[0];
-            destination.manager = _manager;
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        if ([segue.destinationViewController isKindOfClass:[ExpensesTableViewController class]]) {
+            ExpensesTableViewController *destination = segue.destinationViewController;
+            UITableViewCell *cell = sender;
+            destination.account = self.manager.accounts[[self.tableView indexPathForCell:cell].row];
         }
-    } else if([segue.destinationViewController isKindOfClass:[SettingsViewController class]]) {
+    } else if ([segue.destinationViewController isKindOfClass:[SettingsViewController class]]) {
         SettingsViewController *destination = segue.destinationViewController;
-        destination.manager = _manager;
+        destination.account = [self.manager.accounts lastObject];
     }
 }
 

@@ -9,6 +9,8 @@
 #import "ExpensesTableViewController.h"
 #import "Expense.h"
 #import "AddEntryViewController.h"
+#import "SettingsViewController.h"
+#import "StaticValues.h"
 
 @interface ExpensesTableViewController ()
 @property (strong, nonatomic) NSString* createdExpenseName;
@@ -34,38 +36,45 @@
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    self.navigationItem.title = self.account.name;
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_manager.expenses count];
+    if (section == 1) {
+        return 1;
+    }
+    return [self.account.expenses count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Expense *expense = _manager.expenses[indexPath.row];
-    if(expense.amount >= 0) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellPositive" forIndexPath:indexPath];
+    if (indexPath.section == 0) {
+        
+        Expense *expense = self.account.expenses[indexPath.row];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
         
         cell.textLabel.text = expense.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"+ %@%.02f", [_manager currencyWithSpace], (((float)expense.amount)/100.0)];
+        
+        if(expense.amount >= 0) {
+            cell.detailTextLabel.textColor = GREEN_COLOR;
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"+ %@%.02f", [self.account currencyWithSpace], (((float)expense.amount)/100.0)];
+        } else {
+            cell.detailTextLabel.textColor = RED_COLOR;
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"+ %@%.02f", [self.account currencyWithSpace], (((float)expense.amount)/-100.0)];
+        }
         
         return cell;
-    }
-    else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellNegative" forIndexPath:indexPath];
-        
-        cell.textLabel.text = expense.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"- %@%.02f", [_manager currencyWithSpace], (((float)expense.amount)/-100.0)];
-        
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellAdd" forIndexPath:indexPath];
         return cell;
     }
 }
@@ -85,7 +94,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_manager removeExpenseAtIndex:indexPath.row];
+        [self.account removeExpenseAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
@@ -95,7 +104,7 @@
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    [_manager moveExpenseFromIndex:fromIndexPath.row toIndex:toIndexPath.row];
+    [self.account moveExpenseFromIndex:fromIndexPath.row toIndex:toIndexPath.row];
 }
 
 
@@ -124,13 +133,21 @@
             AddEntryViewController *destination = destinationNavigation.viewControllers[0];
             if ([sender isKindOfClass:[UITableViewCell class]]) {
                 UITableViewCell *cell = sender;
-                destination.manager = _manager;
-                destination.expense = _manager.expenses[[self.tableView indexPathForCell:cell].row];
-                destination.indexOfExpense = [self.tableView indexPathForCell:cell].row;
-            } else if ([sender isKindOfClass:[UIBarButtonItem class]]) {
-                destination.manager = _manager;
+                NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+                if (indexPath.section == 0) {
+                    destination.account = self.account;
+                    destination.expense = self.account.expenses[indexPath.row];
+                    destination.indexOfExpense = [self.tableView indexPathForCell:cell].row;
+                } else {
+                    destination.account = self.account;
+                }
+            } else if ([sender isKindOfClass:[UIButton class]]) {
+                destination.account = self.account;
             }
         }
+    } else if ([segue.destinationViewController isKindOfClass:[SettingsViewController class]]) {
+        SettingsViewController* destination = segue.destinationViewController;
+        destination.account = self.account;
     }
 }
 

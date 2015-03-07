@@ -9,6 +9,7 @@
 #import "AddEntryViewController.h"
 #import "Expense.h"
 #import "NSString+CommaFloatValue.h"
+#import "StaticValues.h"
 
 @interface AddEntryViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *addSpendSegmented;
@@ -65,6 +66,8 @@
     [super viewWillDisappear:animated];
     _expense = nil;
     _indexOfExpense = 0;
+    [self.descriptionTextField resignFirstResponder];
+    [self.amountTextField resignFirstResponder];
 }
 
 - (IBAction)segmentedDidChange:(id)sender
@@ -82,23 +85,23 @@
     float value = 0.0;
     if (_expense) {
         if (_addSpendSegmented.selectedSegmentIndex == 1) {
-            value = _manager.saldo - [_amountTextField.text commaFloatValue] - (_expense.amount / 100.0);
+            value = self.account.saldo - [_amountTextField.text commaFloatValue] - (_expense.amount / 100.0);
         } else if (_addSpendSegmented.selectedSegmentIndex == 0) {
             
-            value = _manager.saldo + [_amountTextField.text commaFloatValue] - (_expense.amount / 100.0);
+            value = self.account.saldo + [_amountTextField.text commaFloatValue] - (_expense.amount / 100.0);
         }
     } else {
         if (_addSpendSegmented.selectedSegmentIndex == 1) {
-            value = _manager.saldo - _amountTextField.text.commaFloatValue;
+            value = self.account.saldo - _amountTextField.text.commaFloatValue;
         } else if (_addSpendSegmented.selectedSegmentIndex == 0) {
             
-            value = _manager.saldo + _amountTextField.text.commaFloatValue;
+            value = self.account.saldo + _amountTextField.text.commaFloatValue;
         }
     }
-    _infoLabel.text = [NSString stringWithFormat:@"%@ %@%.02f", NSLocalizedString(@"ADD_ENTRY_YOU_ARE_LEFT", @""), [_manager currencyWithSpace], value];
+    _infoLabel.text = [NSString stringWithFormat:@"%@ %@%.02f", NSLocalizedString(@"ADD_ENTRY_YOU_ARE_LEFT", @""), [self.account currencyWithSpace], value];
     _infoLabel.text = [_infoLabel.text stringByReplacingOccurrencesOfString:@"." withString:@","];
     if (value < 0) {
-        _infoLabel.textColor = [UIColor redColor];
+        _infoLabel.textColor = RED_COLOR;
     } else {
         _infoLabel.textColor = [UIColor lightGrayColor];
     }
@@ -111,9 +114,9 @@
         amount = -amount;
     }
     if (_expense) {
-        [_manager editExepense:amount name:_descriptionTextField.text atIndex:_indexOfExpense];
+        [self.account editExepense:amount name:_descriptionTextField.text atIndex:_indexOfExpense];
     } else {
-        [_manager addExpense:amount name:_descriptionTextField.text];
+        [self.account addExpense:amount name:_descriptionTextField.text];
     }
     [self closeModalView];
 }

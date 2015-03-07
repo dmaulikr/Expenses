@@ -10,7 +10,7 @@
 #import "ExpenseManager.h"
 
 @interface AddEntryViewController : UIViewController
-@property (strong, nonatomic) ExpenseManager *manager;
+@property (strong, nonatomic) Account *account;
 @property (strong, nonatomic) Expense *expense;
 @property (nonatomic) NSInteger indexOfExpense;
 @end

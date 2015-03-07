@@ -7,6 +7,7 @@
 //
 
 #import "CompletionCircleView.h"
+#import "StaticValues.h"
 @interface CompletionCircleView ()
 @property (strong, nonatomic) CAShapeLayer *backCircleLayer;
 @property (strong, nonatomic) CAShapeLayer *completingCircleLayer;
@@ -18,7 +19,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        self.backgroundColor = nil;
     }
     return self;
 }
@@ -32,7 +33,7 @@
         [self.layer addSublayer:_backCircleLayer];
         
         _backCircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.bounds].CGPath;
-        _backCircleLayer.lineWidth = self.frame.size.width / 27;
+        _backCircleLayer.lineWidth = self.frame.size.width / 15;
         _backCircleLayer.fillColor = [UIColor colorWithWhite:0.0 alpha:0.0].CGColor;
 //        _backCircleLayer.fillRule = @"Gradient from light green to original green, top to bottom";
     }
@@ -41,7 +42,7 @@
         [self.layer addSublayer:_completingCircleLayer];
         
         _completingCircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.bounds].CGPath;
-        _completingCircleLayer.lineWidth = 10;
+        _completingCircleLayer.lineWidth = self.frame.size.width / 15;
         _completingCircleLayer.fillColor = [UIColor colorWithWhite:0.0 alpha:0.0].CGColor;
 //        _backCircleLayer.fillRule = @"Gradient from slightly desatured, orangish red to 255 red, top to bottom";
         
@@ -57,8 +58,8 @@
         _backCircleLayer.strokeColor = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
         _completingCircleLayer.strokeEnd = 0.0;
     } else {
-        _completingCircleLayer.strokeColor = [UIColor redColor].CGColor;
-        _backCircleLayer.strokeColor = [UIColor colorWithRed:0.0 green:0.721 blue:0.5215 alpha:1.0].CGColor;
+        _completingCircleLayer.strokeColor = RED_COLOR.CGColor;
+        _backCircleLayer.strokeColor = GREEN_COLOR.CGColor;
         _completingCircleLayer.strokeStart = 0;
         _completingCircleLayer.strokeEnd = _completion;
     }

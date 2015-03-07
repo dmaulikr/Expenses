@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ExpenseManager.h"
+#import "Account.h"
 
 @interface ExpensesTableViewController : UITableViewController <UIAlertViewDelegate>
 
-@property (strong, nonatomic) ExpenseManager* manager;
+@property (strong, nonatomic) Account* account;
 @end

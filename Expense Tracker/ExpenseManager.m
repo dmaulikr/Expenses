@@ -7,162 +7,82 @@
 //
 
 #import "ExpenseManager.h"
+#import "StaticValues.h"
 @interface ExpenseManager ()
-@property (strong, nonatomic) NSString *createdExpenseName;
-@property (nonatomic) BOOL createdExpensePositive;
-@property (nonatomic, copy) void (^completion)();
+@property (strong, nonatomic) NSString *accountsFileName;
 @end
+
 @implementation ExpenseManager
+
++ (ExpenseManager*)sharedManager
+{
+    static ExpenseManager *expenseManager;
+    static dispatch_once_t expenseManagerOncePredicate;
+    dispatch_once(&expenseManagerOncePredicate, ^{
+        expenseManager = [[ExpenseManager alloc] init];
+    });
+    return expenseManager;
+}
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         [self load];
-        if (!_expenses) {
-            _expenses = [[NSMutableArray alloc] init];
+        if (!_accounts) {
+            _accounts = [[NSMutableArray alloc] init];
+            [self updateTintColor];
         }
-        if (!_currency) {
-            if ([NSLocaleIdentifier isEqualToString:@"en_US"]) {
-                _currency = @"$";
-            } else if ([NSLocaleIdentifier isEqualToString:@"jp_JP"]) {
-                _currency = @"¥";
-            } else if ([NSLocaleIdentifier isEqualToString:@"en_GB"]) {
-                _currency = @"£";
-            } else
-                _currency = @"€";
-            }
     }
     return self;
 }
 
 - (void)load
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docDir = [paths objectAtIndex:0];
-    NSString *expensesFileName = [NSString stringWithFormat:@"%@/expenses", docDir];
-    NSString *currencyFileName = [NSString stringWithFormat:@"%@/currency", docDir];
-    _expenses = [NSKeyedUnarchiver unarchiveObjectWithFile:expensesFileName];
-    _currency = [NSKeyedUnarchiver unarchiveObjectWithFile:currencyFileName];
-    [self updateApplicationTintColor];
+    _accounts = [NSKeyedUnarchiver unarchiveObjectWithFile:self.accountsFileName];
 }
 
 - (void)save
 {
-    [self updateApplicationTintColor];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docDir = [paths objectAtIndex:0];
-    NSString *expensesFileName = [NSString stringWithFormat:@"%@/expenses", docDir];
-    NSString *currencyFileName = [NSString stringWithFormat:@"%@/currency", docDir];
-    [NSKeyedArchiver archiveRootObject:_expenses toFile:expensesFileName];
-    [NSKeyedArchiver archiveRootObject:_currency toFile:currencyFileName];
+    [self updateTintColor];
+    [NSKeyedArchiver archiveRootObject:_accounts toFile:self.accountsFileName];
 }
 
-
-#pragma mark - Expense Management
-
-- (void)addExpense:(NSInteger)amount name:(NSString *)name
+- (NSString *)accountsFileName
 {
-    Expense *expense = [[Expense alloc] init];
-    expense.name = name;
-    expense.amount = amount;
-    [self.expenses addObject:expense];
-    [self save];
-}
-
-- (void)removeExpenseAtIndex:(NSInteger)index
-{
-    [_expenses removeObjectAtIndex:index];
-    [self save];
-}
-
-- (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSInteger)index
-{
-    Expense *expense = [[Expense alloc] init];
-    expense.name = name;
-    expense.amount = amount;
-    [_expenses setObject:expense atIndexedSubscript:index];
-    [self save];
-}
-
-- (void)moveExpenseFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
-{
-    Expense *temp = _expenses[fromIndex];
-    [_expenses removeObjectAtIndex:fromIndex];
-    [_expenses insertObject:temp atIndex:toIndex];
-    [self save];
-}
-
-- (void)removeAllExpenses
-{
-    [_expenses removeAllObjects];
-    [self save];
-}
-
-- (void)updateApplicationTintColor
-{
-    if([self percentUsed] >= 1.0) {
-        [[[[UIApplication sharedApplication] delegate] window] setTintColor:[UIColor redColor]];
-    } else {
-        [[[[UIApplication sharedApplication] delegate] window] setTintColor:[UIColor colorWithRed:0.0 green:0.721 blue:0.5215 alpha:1.0]];
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    if (!_accountsFileName) {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *docDir = [paths objectAtIndex:0];
+        _accountsFileName = [NSString stringWithFormat:@"%@/accounts", docDir];
     }
+    return _accountsFileName;
 }
 
 
-#pragma mark - Value Getters
 
-- (float)saldo {
-    float saldo = 0;
-    for (Expense *expense in _expenses) {
-        saldo = saldo+expense.amount;
-    }
-    return saldo/100;
+- (void)addAccount
+{
+    [self.accounts addObject:[[Account alloc] init]];
+    [self save];
 }
 
-- (float)positives {
-    float positives = 0;
-    for (Expense *expense in _expenses) {
-        if(expense.amount > 0) {
-            positives = positives + expense.amount;
+- (void)removeAccountAtIndex:(NSInteger)index
+{
+    [self.accounts removeObjectAtIndex:index];
+    [self save];
+}
+
+
+
+- (void)updateTintColor
+{
+    for (Account *account in self.accounts) {
+        if ([account.expenses count] > 0 && [account saldo] < 0.0) {
+            [[[UIApplication sharedApplication] delegate].window setTintColor:RED_COLOR];
+            return;
         }
     }
-    return positives/100;
-}
-
-- (float)negatives {
-    float negatives = 0;
-    for (Expense *expense in _expenses) {
-        if(expense.amount < 0) {
-            negatives = negatives - expense.amount;
-        }
-    }
-    return negatives/100;
-}
-
-- (float)percentUsed
-{
-    float positives = [self positives];
-    if (positives == 0.0) {
-        return 0.0;
-    }
-    float negatives = [self negatives];
-    float value = negatives / positives;
-    return value;
-}
-
-- (NSString *)currencyWithSpace
-{
-    if ([_currency isEqualToString:@""]) {
-        return _currency;
-    }
-    return [_currency stringByAppendingString:@" "];
-}
-
-- (void)setCurrency:(NSString *)currency
-{
-    _currency = currency;
-    [self save];
+    [[[UIApplication sharedApplication] delegate].window setTintColor:GREEN_COLOR];
 }
 
 @end

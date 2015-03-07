@@ -13,7 +13,7 @@
 		B13953B41960AC560066E180 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B13953B21960AC560066E180 /* InfoPlist.strings */; };
 		B13953B61960AC560066E180 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953B51960AC560066E180 /* main.m */; };
 		B13953BA1960AC560066E180 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953B91960AC560066E180 /* AppDelegate.m */; };
-		B13953BD1960AC560066E180 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13953BB1960AC560066E180 /* Main_iPhone.storyboard */; };
+		B13953BD1960AC560066E180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13953BB1960AC560066E180 /* Main.storyboard */; };
 		B13953C51960AC560066E180 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B13953C41960AC560066E180 /* Images.xcassets */; };
 		B13953CC1960AC560066E180 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13953CB1960AC560066E180 /* XCTest.framework */; };
 		B13953CD1960AC560066E180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13953A91960AC560066E180 /* Foundation.framework */; };
@@ -26,6 +26,9 @@
 		B13953EC1960AE1F0066E180 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EB1960AE1F0066E180 /* Expense.m */; };
 		B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */; };
 		B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */; };
+		B1804CFC19E08D15004FE169 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = B1804CFB19E08D15004FE169 /* Account.m */; };
+		B1804CFF19E090E1004FE169 /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B1804CFE19E090E1004FE169 /* AccountCell.m */; };
+		B1804D0219E0A7AC004FE169 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1804D0119E0A7AC004FE169 /* Launch.storyboard */; };
 		B18E1512197B449500E756A6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18E1511197B449500E756A6 /* SettingsViewController.m */; };
 		B1A1F4661964A44E00F02CFC /* CompletionCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */; };
 		B1E2E1C7197BA17E0024B421 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E2E1C5197BA17E0024B421 /* Localizable.strings */; };
@@ -42,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B138B56719E1C338000489C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B138B56919E1C33B000489C4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		B13953A61960AC560066E180 /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13953A91960AC560066E180 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B13953AB1960AC560066E180 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,7 +57,7 @@
 		B13953B71960AC560066E180 /* Expenses-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Expenses-Prefix.pch"; sourceTree = "<group>"; };
 		B13953B81960AC560066E180 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B13953B91960AC560066E180 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B13953BC1960AC560066E180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		B13953BC1960AC560066E180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B13953C41960AC560066E180 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B13953CA1960AC560066E180 /* ExpensesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpensesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13953CB1960AC560066E180 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -71,16 +76,20 @@
 		B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
 		B15659AC1961AC5B00CAE8D3 /* NSString+CommaFloatValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CommaFloatValue.h"; sourceTree = "<group>"; };
 		B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CommaFloatValue.m"; sourceTree = "<group>"; };
+		B1804CFA19E08D15004FE169 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		B1804CFB19E08D15004FE169 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		B1804CFD19E090E1004FE169 /* AccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCell.h; sourceTree = "<group>"; };
+		B1804CFE19E090E1004FE169 /* AccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCell.m; sourceTree = "<group>"; };
+		B1804D0019E09402004FE169 /* StaticValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticValues.h; sourceTree = "<group>"; };
+		B1804D0119E0A7AC004FE169 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		B18E1510197B449500E756A6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		B18E1511197B449500E756A6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B1A1F4641964A44E00F02CFC /* CompletionCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionCircleView.h; sourceTree = "<group>"; };
 		B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionCircleView.m; sourceTree = "<group>"; };
-		B1C1D12D199B7E4A00FC886E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		B1C1D12D199B7E4A00FC886E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		B1C1D12E199B7E4B00FC886E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B1C1D12F199B7E4B00FC886E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1C1D130199B7E4B00FC886E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B1E2E1BF197B9E380024B421 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
-		B1E2E1C1197B9FFC0024B421 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		B1E2E1C2197B9FFC0024B421 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1E2E1C3197B9FFC0024B421 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1E2E1C6197BA17E0024B421 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = "Expense Tracker/de.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -114,6 +123,8 @@
 		B1047CF21982AA88008DD769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B1804CFD19E090E1004FE169 /* AccountCell.h */,
+				B1804CFE19E090E1004FE169 /* AccountCell.m */,
 				B1A1F4641964A44E00F02CFC /* CompletionCircleView.h */,
 				B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */,
 			);
@@ -155,7 +166,9 @@
 			children = (
 				B13953B81960AC560066E180 /* AppDelegate.h */,
 				B13953B91960AC560066E180 /* AppDelegate.m */,
-				B13953BB1960AC560066E180 /* Main_iPhone.storyboard */,
+				B13953BB1960AC560066E180 /* Main.storyboard */,
+				B1804D0119E0A7AC004FE169 /* Launch.storyboard */,
+				B1804D0019E09402004FE169 /* StaticValues.h */,
 				B15659AF1961AC6300CAE8D3 /* Categories */,
 				B15659AB19619F6E00CAE8D3 /* View Controller */,
 				B13953ED1960AE270066E180 /* Model */,
@@ -200,6 +213,8 @@
 			children = (
 				B13953EA1960AE1F0066E180 /* Expense.h */,
 				B13953EB1960AE1F0066E180 /* Expense.m */,
+				B1804CFA19E08D15004FE169 /* Account.h */,
+				B1804CFB19E08D15004FE169 /* Account.m */,
 				B13953E71960ADFA0066E180 /* ExpenseManager.h */,
 				B13953E81960ADFA0066E180 /* ExpenseManager.m */,
 			);
@@ -278,6 +293,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Hendrik Noeller";
 				TargetAttributes = {
+					B13953A51960AC560066E180 = {
+						DevelopmentTeam = RX98DMF4TJ;
+					};
 					B13953C91960AC560066E180 = {
 						TestTargetID = B13953A51960AC560066E180;
 					};
@@ -310,8 +328,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B13953C51960AC560066E180 /* Images.xcassets in Resources */,
+				B1804D0219E0A7AC004FE169 /* Launch.storyboard in Resources */,
 				B1E2E1C7197BA17E0024B421 /* Localizable.strings in Resources */,
-				B13953BD1960AC560066E180 /* Main_iPhone.storyboard in Resources */,
+				B13953BD1960AC560066E180 /* Main.storyboard in Resources */,
 				B13953B41960AC560066E180 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,10 +355,12 @@
 				B1A1F4661964A44E00F02CFC /* CompletionCircleView.m in Sources */,
 				B13953EC1960AE1F0066E180 /* Expense.m in Sources */,
 				B13953E61960ADD50066E180 /* StartViewController.m in Sources */,
+				B1804CFF19E090E1004FE169 /* AccountCell.m in Sources */,
 				B13953E31960ACB70066E180 /* ExpensesTableViewController.m in Sources */,
 				B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */,
 				B18E1512197B449500E756A6 /* SettingsViewController.m in Sources */,
 				B13953B61960AC560066E180 /* main.m in Sources */,
+				B1804CFC19E08D15004FE169 /* Account.m in Sources */,
 				B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,15 +394,15 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		B13953BB1960AC560066E180 /* Main_iPhone.storyboard */ = {
+		B13953BB1960AC560066E180 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B13953BC1960AC560066E180 /* Base */,
-				B1E2E1BF197B9E380024B421 /* en */,
-				B1E2E1C1197B9FFC0024B421 /* de */,
 				B1C1D12D199B7E4A00FC886E /* es */,
+				B138B56719E1C338000489C4 /* en */,
+				B138B56919E1C33B000489C4 /* de */,
 			);
-			name = Main_iPhone.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		B13953D41960AC560066E180 /* InfoPlist.strings */ = {
@@ -484,13 +505,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Expense Tracker/Expenses-Prefix.pch";
 				INFOPLIST_FILE = "Expense Tracker/Expenses-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = Expenses;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -499,13 +520,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Expense Tracker/Expenses-Prefix.pch";
 				INFOPLIST_FILE = "Expense Tracker/Expenses-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = Expenses;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
