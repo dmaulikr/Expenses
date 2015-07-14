@@ -49,7 +49,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 1) {
-        return 1;
+        return 2;
     }
     return [self.account.expenses count];
 }
@@ -69,12 +69,20 @@
             cell.detailTextLabel.text = [NSString stringWithFormat:@"+ %@%.02f", [self.account currencyWithSpace], (((float)expense.amount)/100.0)];
         } else {
             cell.detailTextLabel.textColor = RED_COLOR;
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"+ %@%.02f", [self.account currencyWithSpace], (((float)expense.amount)/-100.0)];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"- %@%.02f", [self.account currencyWithSpace], (((float)expense.amount)/-100.0)];
         }
         
         return cell;
     } else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellAdd" forIndexPath:indexPath];
+        UITableViewCell *cell;
+        if (indexPath.row == 1) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"CellAdd" forIndexPath:indexPath];
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"CellSum" forIndexPath:indexPath];
+            
+            cell.textLabel.text = @"Σ";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%.02f", [self.account currencyWithSpace], self.account.saldo];
+        }
         return cell;
     }
 }
