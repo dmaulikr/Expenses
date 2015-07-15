@@ -8,6 +8,8 @@
 
 "ACCOUNT_CELL_NO_EXPENSES" = "No Expenses";
 "ACCOUNT_CELL_LAST_EXPENSE" = "Latest";
+"ACCOUNT_LIST_ACCOUNTS" = "Accounts";
+"ENTRY_LIST_EXPENSES" = "Expenses";
 "ADD_ENTRY_YOU_ARE_LEFT" = "You are left with";
 "ADD_ENTRY_ADD_ENTRY" = "Add Entry";
 "ADD_ENTRY_EDIT_ENTRY" = "Edit Entry";

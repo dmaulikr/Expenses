@@ -33,7 +33,7 @@
         [self.layer addSublayer:_backCircleLayer];
         
         _backCircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.bounds].CGPath;
-        _backCircleLayer.lineWidth = self.frame.size.width / 15;
+        _backCircleLayer.lineWidth = self.frame.size.width / 20;
         _backCircleLayer.fillColor = [UIColor colorWithWhite:0.0 alpha:0.0].CGColor;
 //        _backCircleLayer.fillRule = @"Gradient from light green to original green, top to bottom";
     }
@@ -42,7 +42,7 @@
         [self.layer addSublayer:_completingCircleLayer];
         
         _completingCircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.bounds].CGPath;
-        _completingCircleLayer.lineWidth = self.frame.size.width / 15;
+        _completingCircleLayer.lineWidth = self.frame.size.width / 20;
         _completingCircleLayer.fillColor = [UIColor colorWithWhite:0.0 alpha:0.0].CGColor;
 //        _backCircleLayer.fillRule = @"Gradient from slightly desatured, orangish red to 255 red, top to bottom";
         

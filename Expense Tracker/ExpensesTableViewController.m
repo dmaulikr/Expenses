@@ -87,6 +87,13 @@
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return NSLocalizedString(@"ENTRY_LIST_EXPENSES", @"");
+    }
+    return @"";
+}
 
 
 // Override to support conditional editing of the table view.

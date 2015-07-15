@@ -31,8 +31,8 @@
         [self load];
         if (!_accounts) {
             _accounts = [[NSMutableArray alloc] init];
-            [self updateTintColor];
         }
+        [self updateTintColor];
     }
     return self;
 }

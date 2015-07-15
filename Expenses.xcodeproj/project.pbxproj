@@ -64,8 +64,8 @@
 		B13953D31960AC560066E180 /* ExpensesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExpensesTests-Info.plist"; sourceTree = "<group>"; };
 		B13953D51960AC560066E180 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B13953D71960AC560066E180 /* Expense_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Expense_TrackerTests.m; sourceTree = "<group>"; };
-		B13953E11960ACB70066E180 /* ExpensesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpensesTableViewController.h; path = ../ExpensesTableViewController.h; sourceTree = "<group>"; };
-		B13953E21960ACB70066E180 /* ExpensesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpensesTableViewController.m; path = ../ExpensesTableViewController.m; sourceTree = "<group>"; };
+		B13953E11960ACB70066E180 /* ExpensesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpensesTableViewController.h; sourceTree = "<group>"; };
+		B13953E21960ACB70066E180 /* ExpensesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpensesTableViewController.m; sourceTree = "<group>"; };
 		B13953E41960ADD50066E180 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		B13953E51960ADD50066E180 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		B13953E71960ADFA0066E180 /* ExpenseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseManager.h; sourceTree = "<group>"; };

@@ -74,6 +74,14 @@
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return NSLocalizedString(@"ACCOUNT_LIST_ACCOUNTS", @"");
+    }
+    return @"";
+}
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return YES;

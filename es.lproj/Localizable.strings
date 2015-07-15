@@ -6,8 +6,10 @@
   Copyright (c) 2014 Hendrik Noeller. All rights reserved.
 */
 
-"ACCOUNT_CELL_NO_EXPENSES" = "No Expenses";
-"ACCOUNT_CELL_LAST_EXPENSE" = "Last Expense";
+"ACCOUNT_CELL_NO_EXPENSES" = "Sin gastos";
+"ACCOUNT_CELL_LAST_EXPENSE" = "Último gasto";
+"ACCOUNT_LIST_ACCOUNTS" = "Cuentas";
+"ENTRY_LIST_EXPENSES" = "Gastos";
 "ADD_ENTRY_YOU_ARE_LEFT" = "Te quedan";
 "ADD_ENTRY_ADD_ENTRY" = "Añadir gasto";
 "ADD_ENTRY_EDIT_ENTRY" = "Modificar gasto";
