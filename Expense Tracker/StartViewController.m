@@ -3,7 +3,7 @@
 //  Expenses
 //
 //  Created by Hendrik Noeller on 29.06.14.
-//  Copyright (c) 2014 Hendrik Noeller. All rights reserved.
+//  Copyright (c) 2015 Hendrik Noeller. All rights reserved.
 //
 /*Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

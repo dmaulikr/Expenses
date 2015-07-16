@@ -227,10 +227,10 @@
 				B1047CF21982AA88008DD769 /* Views */,
 				B13953E41960ADD50066E180 /* StartViewController.h */,
 				B13953E51960ADD50066E180 /* StartViewController.m */,
-				B15659A819619F5E00CAE8D3 /* AddEntryViewController.h */,
-				B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */,
 				B13953E11960ACB70066E180 /* ExpensesTableViewController.h */,
 				B13953E21960ACB70066E180 /* ExpensesTableViewController.m */,
+				B15659A819619F5E00CAE8D3 /* AddEntryViewController.h */,
+				B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */,
 				B18E1510197B449500E756A6 /* SettingsViewController.h */,
 				B18E1511197B449500E756A6 /* SettingsViewController.m */,
 			);
@@ -290,6 +290,7 @@
 		B139539E1960AC560066E180 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Hendrik Noeller";
 				TargetAttributes = {
