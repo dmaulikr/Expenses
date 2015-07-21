@@ -1,5 +1,5 @@
 //
-//  NSString+CommaFloatValue.h
+//  NSString+CommaDoubleValue.h
 //  Expenses
 //
 //  Created by Hendrik Noeller on 30.06.14.
@@ -26,6 +26,6 @@ THE SOFTWARE.*/
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (CommaFloatValue)
-- (float)commaFloatValue;
+@interface NSString (CommaDoubleValue)
+- (float)commaDoubleValue;
 @end

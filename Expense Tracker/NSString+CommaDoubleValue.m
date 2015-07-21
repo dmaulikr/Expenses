@@ -1,5 +1,5 @@
 //
-//  NSString+CommaFloatValue.m
+//  NSString+CommaDoubleValue.m
 //  Expenses
 //
 //  Created by Hendrik Noeller on 30.06.14.
@@ -24,13 +24,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.*/
 //
 
-#import "NSString+CommaFloatValue.h"
+#import "NSString+CommaDoubleValue.h"
 
-@implementation NSString (CommaFloatValue)
+@implementation NSString (CommaDoubleValue)
 
-- (float)commaFloatValue
+- (float)commaDoubleValue
 {
-    return [self stringByReplacingOccurrencesOfString:@"," withString:@"."].floatValue;
+    return [self stringByReplacingOccurrencesOfString:@"," withString:@"."].doubleValue;
 }
 
 @end

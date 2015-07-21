@@ -26,7 +26,7 @@ THE SOFTWARE.*/
 
 #import "AddEntryViewController.h"
 #import "Expense.h"
-#import "NSString+CommaFloatValue.h"
+#import "NSString+commaDoubleValue.h"
 #import "StaticValues.h"
 
 @interface AddEntryViewController ()
@@ -62,10 +62,10 @@ THE SOFTWARE.*/
     if (_expense) {
         _descriptionTextField.text = _expense.name;
         if (_expense.amount < 0) {
-            _amountTextField.text = [NSString stringWithFormat:@"%.02f", ((float)_expense.amount)/-100.0];
+            _amountTextField.text = [NSString stringWithFormat:@"%.02f", ((double)_expense.amount)/-100.0];
             _addSpendSegmented.selectedSegmentIndex = 1;
         } else {
-            _amountTextField.text = [NSString stringWithFormat:@"%.02f", ((float)_expense.amount)/100.0];
+            _amountTextField.text = [NSString stringWithFormat:@"%.02f", ((double)_expense.amount)/100.0];
             _addSpendSegmented.selectedSegmentIndex = 0;
         }
         _amountTextField.text = [_amountTextField.text stringByReplacingOccurrencesOfString:@"." withString:@","];
@@ -98,22 +98,32 @@ THE SOFTWARE.*/
     [self updateInfoLabel];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.descriptionTextField) {
+        [self.amountTextField becomeFirstResponder];
+    } else if (textField == self.amountTextField) {
+        [self done:nil];
+    }
+    return YES;
+}
+
 - (void)updateInfoLabel
 {
-    float value = 0.0;
+    double value = 0.0;
     if (_expense) {
         if (_addSpendSegmented.selectedSegmentIndex == 1) {
-            value = self.account.saldo - [_amountTextField.text commaFloatValue] - (_expense.amount / 100.0);
+            value = self.account.saldo - [_amountTextField.text commaDoubleValue] - (_expense.amount / 100.0);
         } else if (_addSpendSegmented.selectedSegmentIndex == 0) {
             
-            value = self.account.saldo + [_amountTextField.text commaFloatValue] - (_expense.amount / 100.0);
+            value = self.account.saldo + [_amountTextField.text commaDoubleValue] - (_expense.amount / 100.0);
         }
     } else {
         if (_addSpendSegmented.selectedSegmentIndex == 1) {
-            value = self.account.saldo - _amountTextField.text.commaFloatValue;
+            value = self.account.saldo - _amountTextField.text.commaDoubleValue;
         } else if (_addSpendSegmented.selectedSegmentIndex == 0) {
             
-            value = self.account.saldo + _amountTextField.text.commaFloatValue;
+            value = self.account.saldo + _amountTextField.text.commaDoubleValue;
         }
     }
     _infoLabel.text = [NSString stringWithFormat:@"%@ %@%.02f", NSLocalizedString(@"ADD_ENTRY_YOU_ARE_LEFT", @""), [self.account currencyWithSpace], value];
@@ -127,7 +137,8 @@ THE SOFTWARE.*/
 
 - (IBAction)done:(id)sender
 {
-    NSInteger amount = _amountTextField.text.commaFloatValue*100;
+    //Seemingly stupid calculation to overcome floating point error that lost cents when using *100 instead of *1000/10
+    NSInteger amount = (_amountTextField.text.commaDoubleValue*1000)/10;
     if (_addSpendSegmented.selectedSegmentIndex == 1) {
         amount = -amount;
     }

@@ -25,7 +25,7 @@
 		B13953E91960ADFA0066E180 /* ExpenseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953E81960ADFA0066E180 /* ExpenseManager.m */; };
 		B13953EC1960AE1F0066E180 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EB1960AE1F0066E180 /* Expense.m */; };
 		B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */; };
-		B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */; };
+		B15659AE1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659AD1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.m */; };
 		B1804CFC19E08D15004FE169 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = B1804CFB19E08D15004FE169 /* Account.m */; };
 		B1804CFF19E090E1004FE169 /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B1804CFE19E090E1004FE169 /* AccountCell.m */; };
 		B1804D0219E0A7AC004FE169 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1804D0119E0A7AC004FE169 /* Launch.storyboard */; };
@@ -74,8 +74,8 @@
 		B13953EB1960AE1F0066E180 /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Expense.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B15659A819619F5E00CAE8D3 /* AddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AddEntryViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AddEntryViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B15659AC1961AC5B00CAE8D3 /* NSString+CommaFloatValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSString+CommaFloatValue.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSString+CommaFloatValue.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B15659AC1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSString+CommaDoubleValue.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		B15659AD1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSString+CommaDoubleValue.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B1804CFA19E08D15004FE169 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Account.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B1804CFB19E08D15004FE169 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Account.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B1804CFD19E090E1004FE169 /* AccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AccountCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -240,8 +240,8 @@
 		B15659AF1961AC6300CAE8D3 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				B15659AC1961AC5B00CAE8D3 /* NSString+CommaFloatValue.h */,
-				B15659AD1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m */,
+				B15659AC1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.h */,
+				B15659AD1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -362,7 +362,7 @@
 				B18E1512197B449500E756A6 /* SettingsViewController.m in Sources */,
 				B13953B61960AC560066E180 /* main.m in Sources */,
 				B1804CFC19E08D15004FE169 /* Account.m in Sources */,
-				B15659AE1961AC5B00CAE8D3 /* NSString+CommaFloatValue.m in Sources */,
+				B15659AE1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

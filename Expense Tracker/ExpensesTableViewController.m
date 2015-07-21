@@ -130,6 +130,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.account removeExpenseAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
     }
 }
 
