@@ -25,9 +25,11 @@ THE SOFTWARE.*/
 //
 
 #import <XCTest/XCTest.h>
+#import "ExpenseManager.h"
+#import "Account.h"
+#import "Expense.h"
 
 @interface Expense_TrackerTests : XCTestCase
-
 @end
 
 @implementation Expense_TrackerTests
@@ -42,6 +44,93 @@ THE SOFTWARE.*/
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (void)testMoveAccountToIndex
+{
+    ExpenseManager *manager = [[ExpenseManager alloc] init];
+    while ([manager.accounts count] > 0) {
+        [manager removeAccountAtIndex:0];
+    }
+    
+    [manager addAccount];
+    [manager addAccount];
+    [manager addAccount];
+    
+    Account *accountA = [manager accountAtIndex:0];
+    Account *accountB = [manager accountAtIndex:1];
+    Account *accountC = [manager accountAtIndex:2];
+    
+    [manager moveAccountAtIndex:0 toIndex:0];
+    XCTAssertEqual([manager accountAtIndex:0], accountA);
+    XCTAssertEqual([manager accountAtIndex:1], accountB);
+    XCTAssertEqual([manager accountAtIndex:2], accountC);
+    
+    [manager moveAccountAtIndex:3 toIndex:0];
+    XCTAssertEqual([manager accountAtIndex:0], accountA);
+    XCTAssertEqual([manager accountAtIndex:1], accountB);
+    XCTAssertEqual([manager accountAtIndex:2], accountC);
+    
+    [manager moveAccountAtIndex:0 toIndex:3];
+    XCTAssertEqual([manager accountAtIndex:0], accountA);
+    XCTAssertEqual([manager accountAtIndex:1], accountB);
+    XCTAssertEqual([manager accountAtIndex:2], accountC);
+    
+    [manager moveAccountAtIndex:0 toIndex:1];
+    XCTAssertEqual([manager accountAtIndex:0], accountB);
+    XCTAssertEqual([manager accountAtIndex:1], accountA);
+    XCTAssertEqual([manager accountAtIndex:2], accountC);
+}
+
+- (void)testAddExpense
+{
+    Account *account = [[Account alloc] init];
+    [account addExpense:100 name:@"A"];
+    [account addExpense:200 name:@"B"];
+    [account addExpense:300 name:@"C"];
+    
+    XCTAssertEqual([account expenseAtIndex:0].amount, 100);
+    XCTAssertEqual([account expenseAtIndex:1].amount, 200);
+    XCTAssertEqual([account expenseAtIndex:2].amount, 300);
+    
+    XCTAssertEqual([account expenseAtIndex:0].name, @"A");
+    XCTAssertEqual([account expenseAtIndex:1].name, @"B");
+    XCTAssertEqual([account expenseAtIndex:2].name, @"C");
+}
+
+- (void)testMoveExpenseToIndex
+{
+    Account *account = [[Account alloc] init];
+    [account addExpense:100 name:@"A"];
+    [account addExpense:200 name:@"B"];
+    [account addExpense:300 name:@"C"];
+    
+    [account moveExpenseFromIndex:0 toIndex:0];
+    XCTAssertEqual([account expenseAtIndex:0].amount, 100);
+    XCTAssertEqual([account expenseAtIndex:1].amount, 200);
+    XCTAssertEqual([account expenseAtIndex:2].amount, 300);
+    
+    [account moveExpenseFromIndex:0 toIndex:1];
+    XCTAssertEqual([account expenseAtIndex:0].amount, 200);
+    XCTAssertEqual([account expenseAtIndex:1].amount, 100);
+    XCTAssertEqual([account expenseAtIndex:2].amount, 300);
+}
+
+- (void)testConsolidate
+{
+    Account *account = [[Account alloc] init];
+    
+    [account consolidateAllExpenses];
+    XCTAssertEqual([account.expenses count], 0);
+    
+    [account addExpense:100 name:@"A"];
+    [account addExpense:200 name:@"B"];
+    [account addExpense:300 name:@"C"];
+    [account consolidateAllExpenses];
+    
+    XCTAssertEqual([account.expenses count], 1);
+    XCTAssertEqual([account expenseAtIndex:0].amount, 600);
+    
 }
 
 @end

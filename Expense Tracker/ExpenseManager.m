@@ -6,22 +6,22 @@
 //  Copyright (c) 2015 Hendrik Noeller. All rights reserved.
 //
 /*Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.*/
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.*/
 //
 
 #import "ExpenseManager.h"
@@ -76,6 +76,11 @@ THE SOFTWARE.*/
     return _accountsFileName;
 }
 
+- (Account*)accountAtIndex:(NSUInteger)index
+{
+    return self.accounts[index];
+}
+
 
 
 - (void)addAccount
@@ -84,17 +89,16 @@ THE SOFTWARE.*/
     [self save];
 }
 
-- (void)removeAccountAtIndex:(NSInteger)index
+- (void)removeAccountAtIndex:(NSUInteger)index
 {
     [self.accounts removeObjectAtIndex:index];
     [self save];
 }
 
-- (void)moveAccountAtIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
+- (void)moveAccountAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
-    if (fromIndex >= [self.accounts count] || fromIndex >= [self.accounts count]) {
+    if (fromIndex >= [self.accounts count] || toIndex >= [self.accounts count]) {
         return;
-        NSLog(@"Could not move item, as one of the indices was out of bounds");
     }
     Account *buffer = self.accounts[fromIndex];
     [self.accounts removeObjectAtIndex:fromIndex];

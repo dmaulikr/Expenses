@@ -34,9 +34,10 @@ THE SOFTWARE.*/
 + (ExpenseManager*)sharedManager;
 - (void)save;
 
+- (Account*)accountAtIndex:(NSUInteger)index;
 - (void)addAccount;
-- (void)removeAccountAtIndex:(NSInteger)index;
+- (void)removeAccountAtIndex:(NSUInteger)index;
 
-- (void)moveAccountAtIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+- (void)moveAccountAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 
 @end

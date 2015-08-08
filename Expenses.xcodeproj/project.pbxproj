@@ -535,14 +535,14 @@
 		B13953DF1960AC560066E180 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Expense Tracker.app/Expense Tracker";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Expenses.app/Expenses";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Expense Tracker/Expense Tracker-Prefix.pch";
+				GCC_PREFIX_HEADER = "Expense Tracker/Expenses-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -557,14 +557,14 @@
 		B13953E01960AC560066E180 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Expense Tracker.app/Expense Tracker";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Expenses.app/Expenses";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Expense Tracker/Expense Tracker-Prefix.pch";
+				GCC_PREFIX_HEADER = "Expense Tracker/Expenses-Prefix.pch";
 				INFOPLIST_FILE = "Expense TrackerTests/ExpensesTests-Info.plist";
 				PRODUCT_NAME = ExpensesTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";

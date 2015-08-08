@@ -6,25 +6,26 @@
 //  Copyright (c) 2015 Hendrik Noeller. All rights reserved.
 //
 /*Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.*/
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.*/
 //
 
 #import "Account.h"
+#import "ExpenseManager.h"
 
 @implementation Account
 - (instancetype)init
@@ -71,7 +72,10 @@ THE SOFTWARE.*/
     [[ExpenseManager sharedManager] save];
 }
 
-
+- (Expense*)expenseAtIndex:(NSUInteger)index
+{
+    return self.expenses[index];
+}
 
 #pragma mark - Expense Management
 
@@ -84,13 +88,13 @@ THE SOFTWARE.*/
     [self save];
 }
 
-- (void)removeExpenseAtIndex:(NSInteger)index
+- (void)removeExpenseAtIndex:(NSUInteger)index
 {
     [_expenses removeObjectAtIndex:index];
     [self save];
 }
 
-- (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSInteger)index
+- (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSUInteger)index
 {
     Expense *expense = [[Expense alloc] init];
     expense.name = name;
@@ -99,8 +103,11 @@ THE SOFTWARE.*/
     [self save];
 }
 
-- (void)moveExpenseFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
+- (void)moveExpenseFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
+    if (fromIndex >= [self.expenses count] || toIndex >= [self.expenses count]) {
+        return;
+    }
     Expense *temp = _expenses[fromIndex];
     [_expenses removeObjectAtIndex:fromIndex];
     [_expenses insertObject:temp atIndex:toIndex];
@@ -109,11 +116,13 @@ THE SOFTWARE.*/
 
 - (void)consolidateAllExpenses
 {
-    Expense *consolidation = [[Expense alloc] init];
-    consolidation.name = NSLocalizedString(@"EXPENSE_CONSOLIDATION", @"");
-    consolidation.amount = self.saldo*100;
-    [self removeAllExpenses];
-    [_expenses addObject:consolidation];
+    if ([_expenses count] > 0) {
+        Expense *consolidation = [[Expense alloc] init];
+        consolidation.name = NSLocalizedString(@"EXPENSE_CONSOLIDATION", @"");
+        consolidation.amount = self.saldo*100;
+        [self removeAllExpenses];
+        [_expenses addObject:consolidation];
+    }
 }
 
 - (void)removeAllExpenses

@@ -25,7 +25,6 @@ THE SOFTWARE.*/
 //
 
 #import <Foundation/Foundation.h>
-#import "ExpenseManager.h"
 #import "Expense.h"
 
 @interface Account : NSObject <NSCoding>
@@ -35,10 +34,11 @@ THE SOFTWARE.*/
 @property (strong, nonatomic) NSString *name;
 - (NSString *)currencyWithSpace;
 
+- (Expense*)expenseAtIndex:(NSUInteger)index;
 - (void)addExpense:(NSInteger)amount name:(NSString*)name;
-- (void)removeExpenseAtIndex:(NSInteger)index;
-- (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSInteger)index;
-- (void)moveExpenseFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+- (void)removeExpenseAtIndex:(NSUInteger)index;
+- (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSUInteger)index;
+- (void)moveExpenseFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 - (void)consolidateAllExpenses;
 - (void)removeAllExpenses;
 
