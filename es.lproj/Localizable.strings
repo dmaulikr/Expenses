@@ -17,3 +17,9 @@
 "SETTINGS_CUSTOM_MESSAGE" = "Selectar el símbolo de tu moneda";
 "SETTINGS_CUSTOM_CANCEL" = "Cancelar";
 "SETTINGS_CUSTOM_OK" = "OK";
+"SETTINGS_DELETE?" = "Borrar todo?";
+"SETTINGS_DELETE" = "Borrar";
+"SETTINGS_CANCEL" = "Cancelar";
+"SETTINGS_CONSOLIDATE?" = "Consolidar todo?";
+"SETTINGS_CONSOLIDATE" = "Consolidar";
+"EXPENSE_CONSOLIDATION" = "Saldo";

@@ -38,8 +38,11 @@
 /* Class = "IBUILabel"; text = "Currency"; ObjectID = "MWe-ys-k4E"; */
 "MWe-ys-k4E.text" = "NAME";
 
-/* Class = "IBUIButton"; normalTitle = "Delete all entrys"; ObjectID = "QPh-4W-8VU"; */
-"QPh-4W-8VU.normalTitle" = "Borrar todo";
+/* Class = "IBUIButton"; normalTitle = "Consolidate all entries"; ObjectID = "QPh-4W-8VU"; */
+"QPh-4W-8VU.normalTitle" = "Consolidar todo";
+
+/* Class = "IBUIButton"; normalTitle = "Delete all entries"; ObjectID = "Gbi-Dt-V3H"; */
+"Gbi-Dt-V3H.normalTitle" = "Borrar todo";
 
 /* Class = "IBUILabel"; text = "Amount"; ObjectID = "eyC-mb-wbJ"; */
 "eyC-mb-wbJ.text" = "Total";

@@ -17,3 +17,9 @@
 "SETTINGS_CUSTOM_MESSAGE" = "Enter the symbol of your currency";
 "SETTINGS_CUSTOM_CANCEL" = "Cancel";
 "SETTINGS_CUSTOM_OK" = "OK";
+"SETTINGS_DELETE?" = "Delete all entries?";
+"SETTINGS_DELETE" = "Delete";
+"SETTINGS_CANCEL" = "Cancel";
+"SETTINGS_CONSOLIDATE?" = "Consolidate all entries?";
+"SETTINGS_CONSOLIDATE" = "Consolidate";
+"EXPENSE_CONSOLIDATION" = "Balance";

@@ -20,8 +20,11 @@
 /* Class = "IBUIBarButtonItem"; title = "Settings"; ObjectID = "MpP-tk-Jtw"; */
 "MpP-tk-Jtw.title" = "Settings";
 
-/* Class = "IBUIButton"; normalTitle = "Delete all entrys"; ObjectID = "QPh-4W-8VU"; */
-"QPh-4W-8VU.normalTitle" = "Delete all entrys";
+/* Class = "IBUIButton"; normalTitle = "Consolidate all entries"; ObjectID = "QPh-4W-8VU"; */
+"QPh-4W-8VU.normalTitle" = "Delete all entries";
+
+/* Class = "IBUIButton"; normalTitle = "Delete all entries"; ObjectID = "Gbi-Dt-V3H"; */
+"Gbi-Dt-V3H.normalTitle" = "Consolidate all entries";
 
 /* Class = "IBUILabel"; text = "McDoanlds (40$)"; ObjectID = "YQJ-EX-7DN"; */
 "YQJ-EX-7DN.text" = "McDoanlds (40$)";

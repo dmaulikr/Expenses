@@ -53,6 +53,7 @@ THE SOFTWARE.*/
 {
     [super viewDidLoad];
     self.manager = [ExpenseManager sharedManager];
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -102,7 +103,34 @@ THE SOFTWARE.*/
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YES;
+    if (indexPath.section == 0) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        return YES;
+    }
+    return NO;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+{
+    if (proposedDestinationIndexPath.section != 0) {
+        return [NSIndexPath indexPathForRow:[tableView numberOfRowsInSection:0]-1 inSection:0];
+    }
+    return proposedDestinationIndexPath;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    if (destinationIndexPath.section != 0 || sourceIndexPath.section != 0) {
+        return;
+    }
+    [self.manager moveAccountAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath

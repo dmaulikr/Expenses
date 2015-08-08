@@ -107,6 +107,15 @@ THE SOFTWARE.*/
     [self save];
 }
 
+- (void)consolidateAllExpenses
+{
+    Expense *consolidation = [[Expense alloc] init];
+    consolidation.name = NSLocalizedString(@"EXPENSE_CONSOLIDATION", @"");
+    consolidation.amount = self.saldo*100;
+    [self removeAllExpenses];
+    [_expenses addObject:consolidation];
+}
+
 - (void)removeAllExpenses
 {
     [_expenses removeAllObjects];

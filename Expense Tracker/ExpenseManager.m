@@ -90,6 +90,18 @@ THE SOFTWARE.*/
     [self save];
 }
 
+- (void)moveAccountAtIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
+{
+    if (fromIndex >= [self.accounts count] || fromIndex >= [self.accounts count]) {
+        return;
+        NSLog(@"Could not move item, as one of the indices was out of bounds");
+    }
+    Account *buffer = self.accounts[fromIndex];
+    [self.accounts removeObjectAtIndex:fromIndex];
+    [self.accounts insertObject:buffer atIndex:toIndex];
+    [self save];
+}
+
 
 
 - (void)updateTintColor

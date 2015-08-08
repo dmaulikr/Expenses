@@ -39,6 +39,7 @@ THE SOFTWARE.*/
 - (void)removeExpenseAtIndex:(NSInteger)index;
 - (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSInteger)index;
 - (void)moveExpenseFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+- (void)consolidateAllExpenses;
 - (void)removeAllExpenses;
 
 - (float)saldo;

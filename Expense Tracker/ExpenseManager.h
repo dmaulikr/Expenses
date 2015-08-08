@@ -37,4 +37,6 @@ THE SOFTWARE.*/
 - (void)addAccount;
 - (void)removeAccountAtIndex:(NSInteger)index;
 
+- (void)moveAccountAtIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+
 @end

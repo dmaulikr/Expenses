@@ -379,12 +379,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-4W-8VU">
-                                <rect key="frame" x="245" y="154" width="110" height="30"/>
-                                <state key="normal" title="Delete all entrys">
+                                <rect key="frame" x="224" y="154" width="152" height="30"/>
+                                <state key="normal" title="Consolidate all entries">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="deleteAllEntrys:" destination="SpJ-Hk-Xq2" eventType="touchUpInside" id="9EN-Ko-sUl"/>
+                                    <action selector="consolidateAllEntrys:" destination="SpJ-Hk-Xq2" eventType="touchUpInside" id="xi2-mq-MYV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbi-Dt-V3H">
+                                <rect key="frame" x="243" y="184" width="114" height="30"/>
+                                <state key="normal" title="Delete all entries">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAllEntrys:" destination="SpJ-Hk-Xq2" eventType="touchUpInside" id="1Ub-Te-PBb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -394,7 +403,9 @@
                             <constraint firstItem="MWe-ys-k4E" firstAttribute="leading" secondItem="Rf0-Wv-GGH" secondAttribute="leading" constant="20" symbolic="YES" id="3F7-sL-uXN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qvr-oq-mX1" secondAttribute="trailing" constant="4" id="9U3-HD-hxd"/>
                             <constraint firstItem="hpr-95-9ib" firstAttribute="top" secondItem="Qvr-oq-mX1" secondAttribute="bottom" constant="8" symbolic="YES" id="HpC-3E-nMr"/>
+                            <constraint firstAttribute="centerX" secondItem="Gbi-Dt-V3H" secondAttribute="centerX" id="InO-xy-RsK"/>
                             <constraint firstItem="Qvr-oq-mX1" firstAttribute="baseline" secondItem="MWe-ys-k4E" secondAttribute="baseline" id="R4w-Fo-jVi"/>
+                            <constraint firstItem="Gbi-Dt-V3H" firstAttribute="top" secondItem="QPh-4W-8VU" secondAttribute="bottom" id="VyO-No-DgO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hpr-95-9ib" secondAttribute="trailing" constant="4" id="ai1-8d-hHC"/>
                             <constraint firstItem="Qvr-oq-mX1" firstAttribute="top" secondItem="fcn-2G-RS0" secondAttribute="bottom" constant="16" id="an8-cr-RR4"/>
                             <constraint firstAttribute="centerX" secondItem="QPh-4W-8VU" secondAttribute="centerX" id="bBu-UG-Wxn"/>
@@ -405,8 +416,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="jrb-nL-jKM"/>
                     <connections>
+                        <outlet property="consolidateButton" destination="QPh-4W-8VU" id="gqk-Ww-lwF"/>
                         <outlet property="currencySegmented" destination="hpr-95-9ib" id="1rP-b0-KXu"/>
-                        <outlet property="deleteButton" destination="QPh-4W-8VU" id="wtS-wV-KGb"/>
+                        <outlet property="deleteButton" destination="Gbi-Dt-V3H" id="hrB-9n-a5K"/>
                         <outlet property="nameField" destination="Qvr-oq-mX1" id="OGB-8h-IMS"/>
                     </connections>
                 </viewController>
