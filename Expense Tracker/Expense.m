@@ -33,6 +33,7 @@ THE SOFTWARE.*/
     self = [super init];
     if (self) {
         _name = [coder decodeObjectForKey:@"name"];
+        _date = [coder decodeObjectForKey:@"date"];
         _amount = [coder decodeIntegerForKey:@"amount"];
     }
     return self;
@@ -41,6 +42,7 @@ THE SOFTWARE.*/
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:_name forKey:@"name"];
+    [aCoder encodeObject:_date forKey:@"date"];
     [aCoder encodeInteger:_amount forKey:@"amount"];
 }
 @end

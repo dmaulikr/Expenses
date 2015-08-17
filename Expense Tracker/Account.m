@@ -79,10 +79,11 @@
 
 #pragma mark - Expense Management
 
-- (void)addExpense:(NSInteger)amount name:(NSString *)name
+- (void)addExpense:(NSInteger)amount name:(NSString *)name date:(NSDate *)date
 {
     Expense *expense = [[Expense alloc] init];
     expense.name = name;
+    expense.date = date;
     expense.amount = amount;
     [self.expenses addObject:expense];
     [self save];
@@ -94,10 +95,11 @@
     [self save];
 }
 
-- (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSUInteger)index
+- (void)editExepense:(NSInteger)amount name:(NSString*)name date:(NSDate*)date atIndex:(NSUInteger)index
 {
     Expense *expense = [[Expense alloc] init];
     expense.name = name;
+    expense.date = date;
     expense.amount = amount;
     [_expenses setObject:expense atIndexedSubscript:index];
     [self save];
@@ -119,6 +121,7 @@
     if ([_expenses count] > 0) {
         Expense *consolidation = [[Expense alloc] init];
         consolidation.name = NSLocalizedString(@"EXPENSE_CONSOLIDATION", @"");
+        consolidation.date = [NSDate date];
         consolidation.amount = self.saldo*100;
         [self removeAllExpenses];
         [_expenses addObject:consolidation];
@@ -131,6 +134,59 @@
     [self save];
 }
 
+
+#pragma mark - Sorting
+
+- (void)sortExpensesByName:(BOOL)ascending
+{
+   self.expenses = [[self.expenses sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+       Expense *expense1 = (Expense*)obj1;
+       Expense *expense2 = (Expense*)obj1;
+       if (ascending) {
+           return [expense1.name compare:expense2.name];
+       } else {
+           return [expense2.name compare:expense1.name];
+       }
+    }] mutableCopy];
+}
+
+- (void)sortExpensesByDate:(BOOL)ascending
+{
+    self.expenses = [[self.expenses sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Expense *expense1 = (Expense*)obj1;
+        Expense *expense2 = (Expense*)obj1;
+        if (ascending) {
+            return [expense1.date compare:expense2.date];
+        } else {
+            return [expense2.date compare:expense1.date];
+        }
+    }] mutableCopy];
+}
+
+- (void)sortExpensesByAmount:(BOOL)ascending
+{
+    self.expenses = [[self.expenses sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Expense *expense1 = (Expense*)obj1;
+        Expense *expense2 = (Expense*)obj1;
+        if (ascending) {
+            if (expense1.amount > expense2.amount) {
+                return NSOrderedAscending;
+            } else if (expense1.amount < expense2.amount) {
+                return NSOrderedDescending;
+            } else {
+                return NSOrderedSame;
+            }
+        } else {
+            if (expense2.amount > expense1.amount) {
+                return NSOrderedAscending;
+            } else if (expense2.amount < expense1.amount) {
+                return NSOrderedDescending;
+            } else {
+                return NSOrderedSame;
+            }
+        }
+    }] mutableCopy];
+}
 
 
 #pragma mark - Value Getters

@@ -36,12 +36,16 @@ THE SOFTWARE.*/
 - (NSString *)currencyWithSpace;
 
 - (Expense*)expenseAtIndex:(NSUInteger)index;
-- (void)addExpense:(NSInteger)amount name:(NSString*)name;
+- (void)addExpense:(NSInteger)amount name:(NSString*)name date:(NSDate*)date;
 - (void)removeExpenseAtIndex:(NSUInteger)index;
-- (void)editExepense:(NSInteger)amount name:(NSString*)name atIndex:(NSUInteger)index;
+- (void)editExepense:(NSInteger)amount name:(NSString*)name date:(NSDate*)date atIndex:(NSUInteger)index;
 - (void)moveExpenseFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 - (void)consolidateAllExpenses;
 - (void)removeAllExpenses;
+
+- (void)sortExpensesByName:(BOOL)ascending;
+- (void)sortExpensesByDate:(BOOL)ascending;
+- (void)sortExpensesByAmount:(BOOL)ascending;
 
 - (float)saldo;
 - (float)positives;

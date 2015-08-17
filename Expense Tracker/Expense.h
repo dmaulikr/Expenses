@@ -28,5 +28,6 @@ THE SOFTWARE.*/
 
 @interface Expense : NSObject <NSCoding>
 @property (strong, nonatomic) NSString *name;
-@property (nonatomic) NSInteger amount; //in cents
+@property (strong, nonatomic) NSDate *date;
+@property (nonatomic) NSInteger amount; //in Cents, e.g. 1,20€ = 120
 @end
