@@ -370,6 +370,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <action selector="didChangeName:" destination="SpJ-Hk-Xq2" eventType="editingDidEnd" id="EAc-Lf-KH4"/>
+                                    <action selector="didChangeName:" destination="SpJ-Hk-Xq2" eventType="valueChanged" id="w3B-qL-Hxu"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMx-Tg-PqY">

@@ -31,6 +31,7 @@ THE SOFTWARE.*/
 @interface ExpenseManager : NSObject
 @property (strong, nonatomic) NSMutableArray *accounts;
 
+// The Expense Manager should never be initialized but only accesed by the sharedManager, as this ensures there is only one Manager in place!
 + (ExpenseManager*)sharedManager;
 - (void)save;
 

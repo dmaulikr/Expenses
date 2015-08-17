@@ -26,6 +26,9 @@ THE SOFTWARE.*/
 
 #import <Foundation/Foundation.h>
 
+//A category on NNString that enables it to get a doubleValue from a string that could use a comma instead of a point for decimal separation
+//Necessairy becase in some locales the number pad keyboards feature a comma instead of a point
+
 @interface NSString (CommaDoubleValue)
 - (float)commaDoubleValue;
 @end

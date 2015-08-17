@@ -30,28 +30,89 @@ THE SOFTWARE.*/
 #import "Expense.h"
 
 @interface Expense_TrackerTests : XCTestCase
+@property (strong, nonatomic) NSMutableArray *accountBuffer;
 @end
 
 @implementation Expense_TrackerTests
 
+
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    //Temporarily keeps the data saved on disk and clears the disk for testing
+    ExpenseManager *manager = [[ExpenseManager alloc] init];
+    self.accountBuffer = manager.accounts;
+    manager.accounts = [[NSMutableArray alloc] init];
+    [manager save];
 }
 
 - (void)tearDown
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    //Resaves the data to disk, to restore it to the state it had before running the tests
+    ExpenseManager *manager = [[ExpenseManager alloc] init];
+    manager.accounts = self.accountBuffer;
+    [manager save];
+    
     [super tearDown];
+}
+
+- (void)testSetUpProcedure
+{
+    ExpenseManager *manager = [[ExpenseManager alloc] init];
+    XCTAssertEqualObjects(manager.accounts, [[NSMutableArray alloc] init]);
+}
+
+- (void)testDiskSave
+{
+    ExpenseManager *manager = [[ExpenseManager alloc] init];
+    
+    [manager addAccount];
+    [manager addAccount];
+    [manager addAccount];
+    
+    Account *accountA = [manager accountAtIndex:0];
+    Account *accountB = [manager accountAtIndex:1];
+    Account *accountC = [manager accountAtIndex:2];
+    
+    accountA.name = @"A";
+    accountB.name = @"B";
+    accountC.name = @"C";
+    
+    [accountA addExpense:4200 name:@"fourtytwo"];
+    [accountA addExpense:5200 name:@"fiftytwo"];
+    
+    [manager save]; //this is needed in the test scenaria as the test does not utilze the shared manager, to which the expenses call their save command
+    
+    manager = nil;
+    
+    ExpenseManager *retreivedManager = [[ExpenseManager alloc] init];
+    
+    XCTAssertEqual([retreivedManager.accounts count], 3);
+    
+    Account *retreivedAccountA = [retreivedManager accountAtIndex:0];
+    Account *retreivedAccountB = [retreivedManager accountAtIndex:1];
+    Account *retreivedAccountC = [retreivedManager accountAtIndex:2];
+    
+    XCTAssertEqualObjects(retreivedAccountA.name, @"A");
+    XCTAssertEqualObjects(retreivedAccountB.name, @"B");
+    XCTAssertEqualObjects(retreivedAccountC.name, @"C");
+    
+    XCTAssertEqual([retreivedAccountA.expenses count], 2);
+    
+    Expense *retreivedExpense42 = [accountA expenseAtIndex:0];
+    Expense *retreivedExpense52 = [accountA expenseAtIndex:1];
+    
+    XCTAssertEqualObjects(retreivedExpense42.name, @"fourtytwo");
+    XCTAssertEqual(retreivedExpense42.amount, 4200);
+    XCTAssertEqualObjects(retreivedExpense52.name, @"fiftytwo");
+    XCTAssertEqual(retreivedExpense52.amount, 5200);
+    
 }
 
 - (void)testMoveAccountToIndex
 {
     ExpenseManager *manager = [[ExpenseManager alloc] init];
-    while ([manager.accounts count] > 0) {
-        [manager removeAccountAtIndex:0];
-    }
     
     [manager addAccount];
     [manager addAccount];

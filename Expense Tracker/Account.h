@@ -32,6 +32,7 @@ THE SOFTWARE.*/
 @property (strong, nonatomic) NSMutableArray *expenses;
 @property (strong, nonatomic) NSString *currency;
 @property (strong, nonatomic) NSString *name;
+
 - (NSString *)currencyWithSpace;
 
 - (Expense*)expenseAtIndex:(NSUInteger)index;

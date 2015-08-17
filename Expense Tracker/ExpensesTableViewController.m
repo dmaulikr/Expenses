@@ -57,6 +57,11 @@
     self.navigationItem.title = self.account.name;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.navigationItem.title = self.account.name;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
