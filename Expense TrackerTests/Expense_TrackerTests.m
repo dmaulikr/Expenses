@@ -79,8 +79,8 @@ THE SOFTWARE.*/
     accountB.name = @"B";
     accountC.name = @"C";
     
-    [accountA addExpense:4200 name:@"fourtytwo"];
-    [accountA addExpense:5200 name:@"fiftytwo"];
+    [accountA addExpense:4200 name:@"fourtytwo" date:[NSDate dateWithTimeIntervalSince1970:42]];
+    [accountA addExpense:5200 name:@"fiftytwo" date:[NSDate dateWithTimeIntervalSince1970:52]];
     
     [manager save]; //this is needed in the test scenaria as the test does not utilze the shared manager, to which the expenses call their save command
     
@@ -105,8 +105,10 @@ THE SOFTWARE.*/
     
     XCTAssertEqualObjects(retreivedExpense42.name, @"fourtytwo");
     XCTAssertEqual(retreivedExpense42.amount, 4200);
+    XCTAssertEqualObjects(retreivedExpense42.date, [NSDate dateWithTimeIntervalSince1970:42]);
     XCTAssertEqualObjects(retreivedExpense52.name, @"fiftytwo");
     XCTAssertEqual(retreivedExpense52.amount, 5200);
+    XCTAssertEqualObjects(retreivedExpense52.date, [NSDate dateWithTimeIntervalSince1970:52]);
     
 }
 
@@ -146,35 +148,21 @@ THE SOFTWARE.*/
 - (void)testAddExpense
 {
     Account *account = [[Account alloc] init];
-    [account addExpense:100 name:@"A"];
-    [account addExpense:200 name:@"B"];
-    [account addExpense:300 name:@"C"];
+    [account addExpense:100 name:@"A" date:[NSDate dateWithTimeIntervalSince1970:0]];
+    [account addExpense:200 name:@"B" date:[NSDate dateWithTimeIntervalSince1970:1]];
+    [account addExpense:300 name:@"C" date:[NSDate dateWithTimeIntervalSince1970:2]];
     
     XCTAssertEqual([account expenseAtIndex:0].amount, 100);
     XCTAssertEqual([account expenseAtIndex:1].amount, 200);
     XCTAssertEqual([account expenseAtIndex:2].amount, 300);
     
     XCTAssertEqual([account expenseAtIndex:0].name, @"A");
-    XCTAssertEqual([account expenseAtIndex:1].name, @"B");
+    XCTAssertEqual([account expenseAtIndex:1].name, @"B");;
     XCTAssertEqual([account expenseAtIndex:2].name, @"C");
-}
-
-- (void)testMoveExpenseToIndex
-{
-    Account *account = [[Account alloc] init];
-    [account addExpense:100 name:@"A"];
-    [account addExpense:200 name:@"B"];
-    [account addExpense:300 name:@"C"];
     
-    [account moveExpenseFromIndex:0 toIndex:0];
-    XCTAssertEqual([account expenseAtIndex:0].amount, 100);
-    XCTAssertEqual([account expenseAtIndex:1].amount, 200);
-    XCTAssertEqual([account expenseAtIndex:2].amount, 300);
-    
-    [account moveExpenseFromIndex:0 toIndex:1];
-    XCTAssertEqual([account expenseAtIndex:0].amount, 200);
-    XCTAssertEqual([account expenseAtIndex:1].amount, 100);
-    XCTAssertEqual([account expenseAtIndex:2].amount, 300);
+    XCTAssertEqual([account expenseAtIndex:0].date, [NSDate dateWithTimeIntervalSince1970:0]);
+    XCTAssertEqual([account expenseAtIndex:1].date, [NSDate dateWithTimeIntervalSince1970:1]);
+    XCTAssertEqual([account expenseAtIndex:2].date, [NSDate dateWithTimeIntervalSince1970:2]);
 }
 
 - (void)testConsolidate
@@ -184,14 +172,61 @@ THE SOFTWARE.*/
     [account consolidateAllExpenses];
     XCTAssertEqual([account.expenses count], 0);
     
-    [account addExpense:100 name:@"A"];
-    [account addExpense:200 name:@"B"];
-    [account addExpense:300 name:@"C"];
+    [account addExpense:100 name:@"A" date:[NSDate date]];
+    [account addExpense:200 name:@"B" date:[NSDate date]];
+    [account addExpense:300 name:@"C" date:[NSDate date]];
     [account consolidateAllExpenses];
     
     XCTAssertEqual([account.expenses count], 1);
     XCTAssertEqual([account expenseAtIndex:0].amount, 600);
     
+    Account *accountNegative = [[Account alloc] init];
+    
+    [accountNegative addExpense:100 name:@"A" date:[NSDate date]];
+    [accountNegative addExpense:-200 name:@"B" date:[NSDate date]];
+    [accountNegative addExpense:-300 name:@"C" date:[NSDate date]];
+    [accountNegative consolidateAllExpenses];
+    
+    XCTAssertEqual([accountNegative.expenses count], 1);
+    XCTAssertEqual([accountNegative expenseAtIndex:0].amount, -400);
+}
+
+- (void)testSorting
+{
+    Account *account = [[Account alloc] init];
+    [account addExpense:1 name:@"C" date:[NSDate dateWithTimeIntervalSince1970:1]];
+    [account addExpense:2 name:@"B" date:[NSDate dateWithTimeIntervalSince1970:0]];
+    [account addExpense:3 name:@"A" date:[NSDate dateWithTimeIntervalSince1970:2]];
+    
+    [account sortExpensesByMode:Amount];
+    XCTAssertEqual([account expenseAtIndex:0].amount, 1);
+    XCTAssertEqual([account expenseAtIndex:1].amount, 2);
+    XCTAssertEqual([account expenseAtIndex:2].amount, 3);
+    
+    [account sortExpensesByMode:AmountDescending];
+    XCTAssertEqual([account expenseAtIndex:0].amount, 3);
+    XCTAssertEqual([account expenseAtIndex:1].amount, 2);
+    XCTAssertEqual([account expenseAtIndex:2].amount, 1);
+    
+    [account sortExpensesByMode:Name];
+    XCTAssertEqualObjects([account expenseAtIndex:0].name, @"A");
+    XCTAssertEqualObjects([account expenseAtIndex:1].name, @"B");
+    XCTAssertEqualObjects([account expenseAtIndex:2].name, @"C");
+    
+    [account sortExpensesByMode:NameDescending];
+    XCTAssertEqualObjects([account expenseAtIndex:0].name, @"C");
+    XCTAssertEqualObjects([account expenseAtIndex:1].name, @"B");
+    XCTAssertEqualObjects([account expenseAtIndex:2].name, @"A");
+    
+    [account sortExpensesByMode:Date];
+    XCTAssertEqual([account expenseAtIndex:0].amount, 2);
+    XCTAssertEqual([account expenseAtIndex:1].amount, 1);
+    XCTAssertEqual([account expenseAtIndex:2].amount, 3);
+    
+    [account sortExpensesByMode:DateDescending];
+    XCTAssertEqual([account expenseAtIndex:0].amount, 3);
+    XCTAssertEqual([account expenseAtIndex:1].amount, 1);
+    XCTAssertEqual([account expenseAtIndex:2].amount, 2);
 }
 
 @end

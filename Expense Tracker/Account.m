@@ -56,6 +56,7 @@
         _expenses = [coder decodeObjectForKey:@"expenses"];
         _currency = [coder decodeObjectForKey:@"currency"];
         _name = [coder decodeObjectForKey:@"name"];
+        _sortingMode = [coder decodeIntForKey:@"sort"];
     }
     return self;
 }
@@ -65,6 +66,7 @@
     [aCoder encodeObject:_expenses forKey:@"expenses"];
     [aCoder encodeObject:_currency forKey:@"currency"];
     [aCoder encodeObject:_name forKey:@"name"];
+    [aCoder encodeInt:_sortingMode forKey:@"sort"];
 }
 
 - (void)save
@@ -86,6 +88,7 @@
     expense.date = date;
     expense.amount = amount;
     [self.expenses addObject:expense];
+    [self reSort];
     [self save];
 }
 
@@ -102,17 +105,7 @@
     expense.date = date;
     expense.amount = amount;
     [_expenses setObject:expense atIndexedSubscript:index];
-    [self save];
-}
-
-- (void)moveExpenseFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
-{
-    if (fromIndex >= [self.expenses count] || toIndex >= [self.expenses count]) {
-        return;
-    }
-    Expense *temp = _expenses[fromIndex];
-    [_expenses removeObjectAtIndex:fromIndex];
-    [_expenses insertObject:temp atIndex:toIndex];
+    [self reSort];
     [self save];
 }
 
@@ -137,38 +130,38 @@
 
 #pragma mark - Sorting
 
-- (void)sortExpensesByName:(BOOL)ascending
+- (void)sortExpensesByName:(BOOL)descending
 {
    self.expenses = [[self.expenses sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
        Expense *expense1 = (Expense*)obj1;
-       Expense *expense2 = (Expense*)obj1;
-       if (ascending) {
-           return [expense1.name compare:expense2.name];
-       } else {
+       Expense *expense2 = (Expense*)obj2;
+       if (descending) {
            return [expense2.name compare:expense1.name];
+       } else {
+           return [expense1.name compare:expense2.name];
        }
     }] mutableCopy];
 }
 
-- (void)sortExpensesByDate:(BOOL)ascending
+- (void)sortExpensesByDate:(BOOL)descending
 {
     self.expenses = [[self.expenses sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         Expense *expense1 = (Expense*)obj1;
-        Expense *expense2 = (Expense*)obj1;
-        if (ascending) {
-            return [expense1.date compare:expense2.date];
-        } else {
+        Expense *expense2 = (Expense*)obj2;
+        if (descending) {
             return [expense2.date compare:expense1.date];
+        } else {
+            return [expense1.date compare:expense2.date];
         }
     }] mutableCopy];
 }
 
-- (void)sortExpensesByAmount:(BOOL)ascending
+- (void)sortExpensesByAmount:(BOOL)descending
 {
     self.expenses = [[self.expenses sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         Expense *expense1 = (Expense*)obj1;
-        Expense *expense2 = (Expense*)obj1;
-        if (ascending) {
+        Expense *expense2 = (Expense*)obj2;
+        if (descending) {
             if (expense1.amount > expense2.amount) {
                 return NSOrderedAscending;
             } else if (expense1.amount < expense2.amount) {
@@ -188,6 +181,57 @@
     }] mutableCopy];
 }
 
+- (void)sortExpensesByMode:(aSortingMode)mode
+{
+    self.sortingMode = mode;
+    [self reSort];
+    [self save];
+}
+
+- (void)sortExpensesByNextMode
+{
+    switch (self.sortingMode) {
+        case AmountDescending:
+            [self sortExpensesByMode:Name];
+            break;
+            
+        default:
+            [self sortExpensesByMode:self.sortingMode + 1];
+            break;
+    }
+}
+
+- (void)reSort
+{
+    switch (self.sortingMode) {
+        case Name:
+            [self sortExpensesByName:NO];
+            break;
+            
+        case NameDescending:
+            [self sortExpensesByName:YES];
+            break;
+            
+        case Date:
+            [self sortExpensesByDate:NO];
+            break;
+            
+        case DateDescending:
+            [self sortExpensesByDate:YES];
+            break;
+            
+        case Amount:
+            [self sortExpensesByAmount:NO];
+            break;
+            
+        case AmountDescending:
+            [self sortExpensesByAmount:YES];
+            break;
+            
+        default:
+            break;
+    }
+}
 
 #pragma mark - Value Getters
 

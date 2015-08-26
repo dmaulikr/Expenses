@@ -26,12 +26,14 @@ THE SOFTWARE.*/
 
 #import "AddEntryViewController.h"
 #import "Expense.h"
-#import "NSString+commaDoubleValue.h"
+#import "NSString+CommaDoubleValue.h"
+#import "NSDate+Formatted.h"
 #import "StaticValues.h"
 
 @interface AddEntryViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *addSpendSegmented;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
+@property (weak, nonatomic) IBOutlet UIButton *dateButton;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 
@@ -53,6 +55,7 @@ THE SOFTWARE.*/
     [super viewDidLoad];
     _addSpendSegmented.selectedSegmentIndex = 1;
     _descriptionTextField.text = @"";
+    _dateButton.titleLabel.text = @"";
     _amountTextField.text = @"";
 }
 
@@ -61,6 +64,8 @@ THE SOFTWARE.*/
     [super viewWillAppear:animated];
     if (_expense) {
         _descriptionTextField.text = _expense.name;
+#warning date button doesnt update >:-(
+        [_dateButton setTitle:_expense.date.formattedWhole forState:UIControlStateNormal];
         if (_expense.amount < 0) {
             _amountTextField.text = [NSString stringWithFormat:@"%.02f", ((double)_expense.amount)/-100.0];
             _addSpendSegmented.selectedSegmentIndex = 1;
@@ -74,6 +79,7 @@ THE SOFTWARE.*/
         
     } else {
         self.navigationItem.title = NSLocalizedString(@"ADD_ENTRY_ADD_ENTRY", @"");
+        [_dateButton setTitle:[NSDate date].formattedWhole forState:UIControlStateNormal];
         [self.descriptionTextField becomeFirstResponder];
     }
     [self updateInfoLabel];
@@ -143,9 +149,9 @@ THE SOFTWARE.*/
         amount = -amount;
     }
     if (_expense) {
-        [self.account editExepense:amount name:_descriptionTextField.text atIndex:_indexOfExpense];
+        [self.account editExepense:amount name:_descriptionTextField.text date:nil atIndex:_indexOfExpense];
     } else {
-        [self.account addExpense:amount name:_descriptionTextField.text];
+        [self.account addExpense:amount name:_descriptionTextField.text date:nil];
     }
     [self closeModalView];
 }

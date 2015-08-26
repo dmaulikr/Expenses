@@ -36,6 +36,8 @@ THE SOFTWARE.*/
         _date = [coder decodeObjectForKey:@"date"];
         _amount = [coder decodeIntegerForKey:@"amount"];
     }
+    if (!_date)
+        _date = [NSDate date];
     return self;
 }
 

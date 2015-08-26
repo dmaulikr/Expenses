@@ -27,11 +27,21 @@ THE SOFTWARE.*/
 #import <Foundation/Foundation.h>
 #import "Expense.h"
 
+typedef enum : NSUInteger {
+    Date,
+    DateDescending,
+    Name,
+    NameDescending,
+    Amount,
+    AmountDescending,
+} aSortingMode;
+
 @interface Account : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSMutableArray *expenses;
 @property (strong, nonatomic) NSString *currency;
 @property (strong, nonatomic) NSString *name;
+@property (nonatomic) aSortingMode sortingMode;
 
 - (NSString *)currencyWithSpace;
 
@@ -39,13 +49,11 @@ THE SOFTWARE.*/
 - (void)addExpense:(NSInteger)amount name:(NSString*)name date:(NSDate*)date;
 - (void)removeExpenseAtIndex:(NSUInteger)index;
 - (void)editExepense:(NSInteger)amount name:(NSString*)name date:(NSDate*)date atIndex:(NSUInteger)index;
-- (void)moveExpenseFromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 - (void)consolidateAllExpenses;
 - (void)removeAllExpenses;
 
-- (void)sortExpensesByName:(BOOL)ascending;
-- (void)sortExpensesByDate:(BOOL)ascending;
-- (void)sortExpensesByAmount:(BOOL)ascending;
+- (void)sortExpensesByMode:(aSortingMode)mode;
+- (void)sortExpensesByNextMode;
 
 - (float)saldo;
 - (float)positives;

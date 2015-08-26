@@ -73,3 +73,6 @@
 
 /* Class = "IBUILabel"; text = "Mein Konto"; ObjectID = "tYo-V4-6dh"; */
 "tYo-V4-6dh.text" = "My Account";
+
+/* Class = "IBUILabel"; text = "Sort by"; ObjectID = "w8s-0k-8MF"; */
+"w8s-0k-8MF.text" = "Sort by";
