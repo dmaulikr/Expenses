@@ -26,14 +26,17 @@ THE SOFTWARE.*/
 
 #import "AddEntryViewController.h"
 #import "Expense.h"
-#import "NSString+commaDoubleValue.h"
+#import "NSString+CommaDoubleValue.h"
+#import "NSDate+Formatted.h"
 #import "StaticValues.h"
 
 @interface AddEntryViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *addSpendSegmented;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
+@property (weak, nonatomic) IBOutlet UIButton *dateButton;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @end
 
@@ -53,6 +56,7 @@ THE SOFTWARE.*/
     [super viewDidLoad];
     _addSpendSegmented.selectedSegmentIndex = 1;
     _descriptionTextField.text = @"";
+    _dateButton.titleLabel.text = @"";
     _amountTextField.text = @"";
 }
 
@@ -61,6 +65,8 @@ THE SOFTWARE.*/
     [super viewWillAppear:animated];
     if (_expense) {
         _descriptionTextField.text = _expense.name;
+        [_dateButton setTitle:_expense.date.formattedWhole forState:UIControlStateNormal];
+        _datePicker.date = _expense.date;
         if (_expense.amount < 0) {
             _amountTextField.text = [NSString stringWithFormat:@"%.02f", ((double)_expense.amount)/-100.0];
             _addSpendSegmented.selectedSegmentIndex = 1;
@@ -70,12 +76,12 @@ THE SOFTWARE.*/
         }
         _amountTextField.text = [_amountTextField.text stringByReplacingOccurrencesOfString:@"." withString:@","];
         self.navigationItem.title = NSLocalizedString(@"ADD_ENTRY_EDIT_ENTRY", @"");
-        [self.amountTextField becomeFirstResponder];
-        
     } else {
         self.navigationItem.title = NSLocalizedString(@"ADD_ENTRY_ADD_ENTRY", @"");
-        [self.descriptionTextField becomeFirstResponder];
+        [_dateButton setTitle:[NSDate date].formattedWhole forState:UIControlStateNormal];
+        self.datePicker.date = [NSDate date];
     }
+    [self.amountTextField becomeFirstResponder];
     [self updateInfoLabel];
 }
 
@@ -98,14 +104,25 @@ THE SOFTWARE.*/
     [self updateInfoLabel];
 }
 
+- (IBAction)dateDidChange:(id)sender
+{
+    [_dateButton setTitle:[self.datePicker.date formattedWhole] forState:UIControlStateNormal];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField == self.descriptionTextField) {
-        [self.amountTextField becomeFirstResponder];
-    } else if (textField == self.amountTextField) {
-        [self done:nil];
+    if (textField == self.amountTextField) {
+        [self.descriptionTextField becomeFirstResponder];
+    } else if (textField == self.descriptionTextField) {
+        [self.descriptionTextField resignFirstResponder];
     }
     return YES;
+}
+
+- (IBAction)dateSelect:(id)sender
+{
+    [self.descriptionTextField resignFirstResponder];
+    [self.amountTextField resignFirstResponder];
 }
 
 - (void)updateInfoLabel
@@ -115,7 +132,6 @@ THE SOFTWARE.*/
         if (_addSpendSegmented.selectedSegmentIndex == 1) {
             value = self.account.saldo - [_amountTextField.text commaDoubleValue] - (_expense.amount / 100.0);
         } else if (_addSpendSegmented.selectedSegmentIndex == 0) {
-            
             value = self.account.saldo + [_amountTextField.text commaDoubleValue] - (_expense.amount / 100.0);
         }
     } else {
@@ -137,15 +153,15 @@ THE SOFTWARE.*/
 
 - (IBAction)done:(id)sender
 {
-    //Seemingly stupid calculation to overcome floating point error that lost cents when using *100 instead of *1000/10
-    NSInteger amount = (_amountTextField.text.commaDoubleValue*1000)/10;
+    //Seemingly stupid calculation to increase presicion to overcome floating point error that sometimes lost cents when using *100 instead of *10000/100
+    NSInteger amount = (_amountTextField.text.commaDoubleValue*10000)/100;
     if (_addSpendSegmented.selectedSegmentIndex == 1) {
         amount = -amount;
     }
     if (_expense) {
-        [self.account editExepense:amount name:_descriptionTextField.text atIndex:_indexOfExpense];
+        [self.account editExepense:amount name:_descriptionTextField.text date:self.datePicker.date atIndex:_indexOfExpense];
     } else {
-        [self.account addExpense:amount name:_descriptionTextField.text];
+        [self.account addExpense:amount name:_descriptionTextField.text date:self.datePicker.date];
     }
     [self closeModalView];
 }

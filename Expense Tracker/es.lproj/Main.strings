@@ -73,3 +73,6 @@
 
 /* Class = "IBUIButton"; normalTitle = "Settings"; ObjectID = "z11-mq-jsb"; */
 "z11-mq-jsb.normalTitle" = "Ajustes";
+
+/* Class = "IBUILabel"; text = "Sort by"; ObjectID = "w8s-0k-8MF"; */
+"w8s-0k-8MF.text" = "Clasificar";

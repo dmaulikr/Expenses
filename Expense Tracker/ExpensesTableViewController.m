@@ -72,7 +72,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 1) {
-        return 1;
+        return 2;
     }
     return [self.account.expenses count] + 1;
 }
@@ -100,10 +100,15 @@
             cell = [tableView dequeueReusableCellWithIdentifier:@"CellAdd" forIndexPath:indexPath];
         }
     } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"CellSum" forIndexPath:indexPath];
-        
-        cell.textLabel.text = @"Σ";
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%.02f", [self.account currencyWithSpace], self.account.saldo];
+        if (indexPath.row == 0) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"CellSum" forIndexPath:indexPath];
+            
+            cell.textLabel.text = @"Σ";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%.02f", [self.account currencyWithSpace], self.account.saldo];
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"CellSort" forIndexPath:indexPath];
+            cell.detailTextLabel.text = [self descriptionForSortingMode:self.account.sortingMode];
+        }
     }
     return cell;
 }
@@ -139,26 +144,48 @@
     }
 }
 
-
-
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-    [self.account moveExpenseFromIndex:fromIndexPath.row toIndex:toIndexPath.row];
-}
-
-
-
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1 && indexPath.row == 1) {
+        [self.account sortExpensesByNextMode];
+        [self.tableView reloadData];
+    }
+}
+
+
+
+- (NSString*)descriptionForSortingMode:(aSortingMode)mode
+{
+    switch (mode) {
+        case Name:
+            return [@"↓" stringByAppendingString:NSLocalizedString(@"SORTING_NAME", @"")];
+            break;
+            
+        case NameDescending:
+            return [@"↑" stringByAppendingString:NSLocalizedString(@"SORTING_NAME", @"")];
+            break;
+            
+        case Date:
+            return [@"↓" stringByAppendingString:NSLocalizedString(@"SORTING_DATE", @"")];
+            break;
+            
+        case DateDescending:
+            return [@"↑" stringByAppendingString:NSLocalizedString(@"SORTING_DATE", @"")];
+            break;
+            
+        case Amount:
+            return [@"↓" stringByAppendingString:NSLocalizedString(@"SORTING_AMOUNT", @"")];
+            break;
+            
+        case AmountDescending:
+            return [@"↑" stringByAppendingString:NSLocalizedString(@"SORTING_AMOUNT", @"")];
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
 }
 
 

@@ -32,6 +32,7 @@
 		B18E1512197B449500E756A6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B18E1511197B449500E756A6 /* SettingsViewController.m */; };
 		B1A1F4661964A44E00F02CFC /* CompletionCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A1F4651964A44E00F02CFC /* CompletionCircleView.m */; };
 		B1E2E1C7197BA17E0024B421 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E2E1C5197BA17E0024B421 /* Localizable.strings */; };
+		B1F146891B83837100FBA1A8 /* NSDate+Formatted.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F146871B83837100FBA1A8 /* NSDate+Formatted.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		B1E2E1C3197B9FFC0024B421 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B1E2E1C6197BA17E0024B421 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = "Expense Tracker/de.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B1E2E1D0197BA2670024B421 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B1F146871B83837100FBA1A8 /* NSDate+Formatted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatted.m"; sourceTree = "<group>"; };
+		B1F146881B83837100FBA1A8 /* NSDate+Formatted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatted.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,8 @@
 			children = (
 				B15659AC1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.h */,
 				B15659AD1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.m */,
+				B1F146881B83837100FBA1A8 /* NSDate+Formatted.h */,
+				B1F146871B83837100FBA1A8 /* NSDate+Formatted.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				B1804CFF19E090E1004FE169 /* AccountCell.m in Sources */,
 				B13953E31960ACB70066E180 /* ExpensesTableViewController.m in Sources */,
 				B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */,
+				B1F146891B83837100FBA1A8 /* NSDate+Formatted.m in Sources */,
 				B18E1512197B449500E756A6 /* SettingsViewController.m in Sources */,
 				B13953B61960AC560066E180 /* main.m in Sources */,
 				B1804CFC19E08D15004FE169 /* Account.m in Sources */,

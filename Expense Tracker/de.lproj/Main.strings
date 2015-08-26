@@ -33,7 +33,7 @@
 "dIf-6f-QRz.title" = "Ausgaben";
 
 /* Class = "IBUILabel"; text = "Amount"; ObjectID = "eyC-mb-wbJ"; */
-"eyC-mb-wbJ.text" = "Höhe";
+"eyC-mb-wbJ.text" = "Betrag";
 
 /* Class = "IBUISegmentedControl"; hpr-95-9ib.segmentTitles[0] = "$"; ObjectID = "hpr-95-9ib"; */
 "hpr-95-9ib.segmentTitles[0]" = "$";
@@ -73,3 +73,6 @@
 
 /* Class = "IBUILabel"; text = "Mein Konto"; ObjectID = "tYo-V4-6dh"; */
 "tYo-V4-6dh.text" = "Mein Konto";
+
+/* Class = "IBUILabel"; text = "Sort by"; ObjectID = "w8s-0k-8MF"; */
+"w8s-0k-8MF.text" = "Sortieren";

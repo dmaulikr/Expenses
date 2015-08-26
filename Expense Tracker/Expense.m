@@ -33,14 +33,19 @@ THE SOFTWARE.*/
     self = [super init];
     if (self) {
         _name = [coder decodeObjectForKey:@"name"];
+        _date = [coder decodeObjectForKey:@"date"];
         _amount = [coder decodeIntegerForKey:@"amount"];
     }
+    if (!_date)
+        //To support old data from before dates existed. As the objects are in an array and that way are initialized in order, the set dates will recreate the order in which the expenses existed
+        _date = [NSDate date];
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:_name forKey:@"name"];
+    [aCoder encodeObject:_date forKey:@"date"];
     [aCoder encodeInteger:_amount forKey:@"amount"];
 }
 @end
