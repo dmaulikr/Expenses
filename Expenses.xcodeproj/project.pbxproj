@@ -26,6 +26,7 @@
 		B13953EC1960AE1F0066E180 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = B13953EB1960AE1F0066E180 /* Expense.m */; };
 		B15659AA19619F5E00CAE8D3 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */; };
 		B15659AE1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B15659AD1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.m */; };
+		B16DC0E21B8DAA7B001874CE /* CsvString.m in Sources */ = {isa = PBXBuildFile; fileRef = B16DC0E11B8DAA7B001874CE /* CsvString.m */; };
 		B1804CFC19E08D15004FE169 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = B1804CFB19E08D15004FE169 /* Account.m */; };
 		B1804CFF19E090E1004FE169 /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B1804CFE19E090E1004FE169 /* AccountCell.m */; };
 		B1804D0219E0A7AC004FE169 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1804D0119E0A7AC004FE169 /* Launch.storyboard */; };
@@ -77,6 +78,8 @@
 		B15659A919619F5E00CAE8D3 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AddEntryViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B15659AC1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSString+CommaDoubleValue.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B15659AD1961AC5B00CAE8D3 /* NSString+CommaDoubleValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSString+CommaDoubleValue.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B16DC0E01B8DAA7B001874CE /* CsvString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CsvString.h; sourceTree = "<group>"; };
+		B16DC0E11B8DAA7B001874CE /* CsvString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CsvString.m; sourceTree = "<group>"; };
 		B1804CFA19E08D15004FE169 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Account.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B1804CFB19E08D15004FE169 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Account.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B1804CFD19E090E1004FE169 /* AccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AccountCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -220,6 +223,8 @@
 				B1804CFB19E08D15004FE169 /* Account.m */,
 				B13953E71960ADFA0066E180 /* ExpenseManager.h */,
 				B13953E81960ADFA0066E180 /* ExpenseManager.m */,
+				B16DC0E01B8DAA7B001874CE /* CsvString.h */,
+				B16DC0E11B8DAA7B001874CE /* CsvString.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				B13953BA1960AC560066E180 /* AppDelegate.m in Sources */,
 				B13953E91960ADFA0066E180 /* ExpenseManager.m in Sources */,
 				B1A1F4661964A44E00F02CFC /* CompletionCircleView.m in Sources */,
+				B16DC0E21B8DAA7B001874CE /* CsvString.m in Sources */,
 				B13953EC1960AE1F0066E180 /* Expense.m in Sources */,
 				B13953E61960ADD50066E180 /* StartViewController.m in Sources */,
 				B1804CFF19E090E1004FE169 /* AccountCell.m in Sources */,
