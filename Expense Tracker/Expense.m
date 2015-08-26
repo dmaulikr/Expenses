@@ -37,6 +37,7 @@ THE SOFTWARE.*/
         _amount = [coder decodeIntegerForKey:@"amount"];
     }
     if (!_date)
+        //To support old data from before dates existed. As the objects are in an array and that way are initialized in order, the set dates will recreate the order in which the expenses existed
         _date = [NSDate date];
     return self;
 }
