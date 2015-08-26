@@ -26,6 +26,7 @@
 
 #import "Account.h"
 #import "ExpenseManager.h"
+#import "CsvString.h"
 
 @implementation Account
 - (instancetype)init
@@ -292,6 +293,31 @@
 {
     _name = name;
     [self save];
+}
+
+- (NSURL *)csvFile
+{
+    CsvString* csv = [[CsvString alloc] init];
+    
+    [csv addStringCell:NSLocalizedString(@"NAME", @"")];
+    [csv addStringCell:NSLocalizedString(@"DATE", @"")];
+    [csv addStringCell:NSLocalizedString(@"AMOUNT", @"")];
+    [csv newLine];
+    for (Expense *expense in self.expenses) {
+        [csv addStringCell:expense.name];
+        [csv addTimeAndDateCell:expense.date];
+        [csv addDoubleCell:expense.amount/100.0];
+        [csv newLine];
+    }
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDir = [paths objectAtIndex:0];
+    NSString *fileName = [NSString stringWithFormat:@"%@/%@.csv", docDir, self.name];
+    
+    if ([[csv.csvString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileName atomically:YES])
+        return [NSURL fileURLWithPath:fileName];
+    else
+        return nil;
 }
 
 @end

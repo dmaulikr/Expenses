@@ -117,6 +117,14 @@
                         otherButtonTitles:nil] showFromRect:_consolidateButton.frame inView:self.view animated:YES];
 }
 
+- (IBAction)share:(id)sender
+{
+    NSURL *csvFile = [self.account csvFile];
+    if (csvFile) {
+        [self presentViewController:[[UIActivityViewController alloc] initWithActivityItems:@[csvFile] applicationActivities:@[]] animated:YES completion:nil];
+    }
+}
+
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {

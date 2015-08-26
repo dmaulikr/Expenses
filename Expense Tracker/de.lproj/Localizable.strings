@@ -23,6 +23,6 @@
 "SETTINGS_CONSOLIDATE" = "Zusammenfassen";
 "SETTINGS_CANCEL" = "Abbrechen";
 "EXPENSE_CONSOLIDATION" = "Haben";
-"SORTING_NAME" = "Name";
-"SORTING_DATE" = "Datum";
-"SORTING_AMOUNT" = "Betrag";
+"NAME" = "Name";
+"DATE" = "Datum";
+"AMOUNT" = "Betrag";

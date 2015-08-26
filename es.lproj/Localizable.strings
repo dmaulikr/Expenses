@@ -23,6 +23,6 @@
 "SETTINGS_CONSOLIDATE?" = "Consolidar todo?";
 "SETTINGS_CONSOLIDATE" = "Consolidar";
 "EXPENSE_CONSOLIDATION" = "Saldo";
-"SORTING_NAME" = "Descripcion";
-"SORTING_DATE" = "Fecha";
-"SORTING_AMOUNT" = "Total";
+"NAME" = "Descripcion";
+"DATE" = "Fecha";
+"AMOUNT" = "Total";

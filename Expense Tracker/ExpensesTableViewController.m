@@ -159,27 +159,27 @@
 {
     switch (mode) {
         case Name:
-            return [@"↓" stringByAppendingString:NSLocalizedString(@"SORTING_NAME", @"")];
+            return [@"↓" stringByAppendingString:NSLocalizedString(@"NAME", @"")];
             break;
             
         case NameDescending:
-            return [@"↑" stringByAppendingString:NSLocalizedString(@"SORTING_NAME", @"")];
+            return [@"↑" stringByAppendingString:NSLocalizedString(@"NAME", @"")];
             break;
             
         case Date:
-            return [@"↓" stringByAppendingString:NSLocalizedString(@"SORTING_DATE", @"")];
+            return [@"↓" stringByAppendingString:NSLocalizedString(@"DATE", @"")];
             break;
             
         case DateDescending:
-            return [@"↑" stringByAppendingString:NSLocalizedString(@"SORTING_DATE", @"")];
+            return [@"↑" stringByAppendingString:NSLocalizedString(@"DATE", @"")];
             break;
             
         case Amount:
-            return [@"↓" stringByAppendingString:NSLocalizedString(@"SORTING_AMOUNT", @"")];
+            return [@"↓" stringByAppendingString:NSLocalizedString(@"AMOUNT", @"")];
             break;
             
         case AmountDescending:
-            return [@"↑" stringByAppendingString:NSLocalizedString(@"SORTING_AMOUNT", @"")];
+            return [@"↑" stringByAppendingString:NSLocalizedString(@"AMOUNT", @"")];
             break;
             
         default:

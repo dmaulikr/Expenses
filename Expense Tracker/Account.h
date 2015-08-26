@@ -58,5 +58,6 @@ typedef enum : NSUInteger {
 - (float)saldo;
 - (float)positives;
 - (float)negatives;
+- (NSURL*)csvFile;
 
 @end

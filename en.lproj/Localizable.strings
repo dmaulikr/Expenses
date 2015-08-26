@@ -23,6 +23,6 @@
 "SETTINGS_CONSOLIDATE?" = "Consolidate all entries?";
 "SETTINGS_CONSOLIDATE" = "Consolidate";
 "EXPENSE_CONSOLIDATION" = "Balance";
-"SORTING_NAME" = "Name";
-"SORTING_DATE" = "Date";
-"SORTING_AMOUNT" = "Amount";
+"NAME" = "Name";
+"DATE" = "Date";
+"AMOUNT" = "Amount";
