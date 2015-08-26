@@ -484,7 +484,13 @@
                             <constraint firstItem="hpr-95-9ib" firstAttribute="centerY" secondItem="CMx-Tg-PqY" secondAttribute="centerY" constant="0.5" id="zUF-NF-s8T"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="jrb-nL-jKM"/>
+                    <navigationItem key="navigationItem" title="Settings" id="jrb-nL-jKM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="y7S-qk-mRz">
+                            <connections>
+                                <action selector="share:" destination="SpJ-Hk-Xq2" id="9Jt-Za-nJO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="consolidateButton" destination="QPh-4W-8VU" id="gqk-Ww-lwF"/>
                         <outlet property="currencySegmented" destination="hpr-95-9ib" id="1rP-b0-KXu"/>

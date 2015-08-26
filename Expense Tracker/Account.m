@@ -315,7 +315,7 @@
     NSString *fileName = [NSString stringWithFormat:@"%@/%@.csv", docDir, self.name];
     
     if ([[csv.csvString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileName atomically:YES])
-        return [NSURL URLWithString:fileName];
+        return [NSURL fileURLWithPath:fileName];
     else
         return nil;
 }
