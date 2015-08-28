@@ -90,11 +90,12 @@
             
             if(expense.amount >= 0) {
                 cell.detailTextLabel.textColor = GREEN_COLOR;
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"+ %@%.02f", [self.account currencyWithSpace], (((float)expense.amount)/100.0)];
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%.02f", [self.account currencyWithSpace], (((float)expense.amount)/100.0)];
             } else {
                 cell.detailTextLabel.textColor = RED_COLOR;
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"- %@%.02f", [self.account currencyWithSpace], (((float)expense.amount)/-100.0)];
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%.02f", [self.account currencyWithSpace], (((float)expense.amount)/-100.0)];
             }
+            
             return cell;
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:@"CellAdd" forIndexPath:indexPath];

@@ -26,8 +26,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="400$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaB-Es-aam">
-                                            <rect key="frame" x="99" y="36" width="468" height="29"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="400$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaB-Es-aam">
+                                            <rect key="frame" x="99" y="35" width="468" height="29"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <color key="textColor" red="0.0" green="0.64971301020000005" blue="0.32761907080000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -152,8 +152,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oJF-zu-ljT">
-                                <rect key="frame" x="203" y="72" width="198" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oJF-zu-ljT">
+                                <rect key="frame" x="202" y="72" width="197" height="29"/>
                                 <segments>
                                     <segment title="Add Money"/>
                                     <segment title="Spend Money"/>
@@ -171,12 +171,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You are left with $10000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQp-71-f4Z">
-                                <rect key="frame" x="110" y="216" width="155" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgO-yc-H5M">
+                                <rect key="frame" x="110" y="184" width="111" height="30"/>
+                                <state key="normal" title="22.7.1997 13.05">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dateSelect:" destination="pkv-Di-iua" eventType="touchUpInside" id="neI-fz-rTf"/>
+                                </connections>
+                            </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tig-c6-CUg">
                                 <rect key="frame" x="0.0" y="438" width="600" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="462262056.80239397">
@@ -189,22 +192,24 @@
                                     <action selector="dateDidChange:" destination="pkv-Di-iua" eventType="valueChanged" id="6NS-2E-iWD"/>
                                 </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgO-yc-H5M">
-                                <rect key="frame" x="110" y="184" width="111" height="30"/>
-                                <state key="normal" title="22.7.1997 13.05">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dateSelect:" destination="pkv-Di-iua" eventType="touchUpInside" id="neI-fz-rTf"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are left with $10000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQp-71-f4Z">
+                                <rect key="frame" x="425" y="191" width="155" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QhU-se-6un" firstAttribute="top" secondItem="Tig-c6-CUg" secondAttribute="bottom" id="2eD-ar-9lt"/>
+                            <constraint firstItem="QhU-se-6un" firstAttribute="top" secondItem="Tig-c6-CUg" secondAttribute="bottom" id="2eD-ar-9lt">
+                                <variation key="heightClass=compact" constant="-10"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="7Fc-bK-ejl" secondAttribute="trailing" constant="20" id="4nO-3d-lmI"/>
-                            <constraint firstItem="oJF-zu-ljT" firstAttribute="top" secondItem="d7c-By-lQk" secondAttribute="bottom" constant="8" symbolic="YES" id="5CD-HN-Tgr"/>
+                            <constraint firstItem="oJF-zu-ljT" firstAttribute="top" secondItem="d7c-By-lQk" secondAttribute="bottom" constant="8" symbolic="YES" id="5CD-HN-Tgr">
+                                <variation key="heightClass=compact" constant="2"/>
+                            </constraint>
                             <constraint firstItem="79g-E0-Akm" firstAttribute="baseline" secondItem="eyC-mb-wbJ" secondAttribute="baseline" id="6Cs-cr-y8W"/>
+                            <constraint firstItem="MQp-71-f4Z" firstAttribute="baseline" secondItem="YgO-yc-H5M" secondAttribute="baseline" id="Cvb-9t-0eF"/>
                             <constraint firstItem="7Fc-bK-ejl" firstAttribute="leading" secondItem="DWk-2J-wKT" secondAttribute="trailing" constant="8" id="Ede-tH-c2F"/>
                             <constraint firstItem="7Fc-bK-ejl" firstAttribute="baseline" secondItem="DWk-2J-wKT" secondAttribute="baseline" id="FO8-IX-WeF"/>
                             <constraint firstAttribute="trailing" secondItem="79g-E0-Akm" secondAttribute="trailing" constant="20" id="IE1-Q7-CTD"/>
@@ -215,16 +220,42 @@
                             <constraint firstItem="MQp-71-f4Z" firstAttribute="leading" secondItem="YgO-yc-H5M" secondAttribute="leading" id="YGA-4j-NBO"/>
                             <constraint firstItem="SE5-uc-x3O" firstAttribute="leading" secondItem="Ytg-jv-NdP" secondAttribute="leading" constant="20" id="Znq-ZT-Nhs"/>
                             <constraint firstAttribute="trailing" secondItem="Tig-c6-CUg" secondAttribute="trailing" id="fsa-Zf-I8f"/>
-                            <constraint firstItem="SE5-uc-x3O" firstAttribute="top" secondItem="DWk-2J-wKT" secondAttribute="bottom" constant="18" id="hcc-QT-iEB"/>
-                            <constraint firstItem="7Fc-bK-ejl" firstAttribute="top" secondItem="79g-E0-Akm" secondAttribute="bottom" constant="8" id="hgY-Q3-H44"/>
+                            <constraint firstItem="SE5-uc-x3O" firstAttribute="top" secondItem="DWk-2J-wKT" secondAttribute="bottom" constant="18" id="hcc-QT-iEB">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="7Fc-bK-ejl" firstAttribute="top" secondItem="79g-E0-Akm" secondAttribute="bottom" constant="8" id="hgY-Q3-H44">
+                                <variation key="heightClass=compact" constant="2"/>
+                            </constraint>
                             <constraint firstItem="YgO-yc-H5M" firstAttribute="baseline" secondItem="SE5-uc-x3O" secondAttribute="baseline" id="jZC-8X-qkj"/>
                             <constraint firstItem="7Fc-bK-ejl" firstAttribute="leading" secondItem="YgO-yc-H5M" secondAttribute="leading" id="mOk-nS-Y0H"/>
                             <constraint firstItem="DWk-2J-wKT" firstAttribute="leading" secondItem="Ytg-jv-NdP" secondAttribute="leading" constant="20" id="mg7-GY-sQe"/>
+                            <constraint firstAttribute="trailing" secondItem="MQp-71-f4Z" secondAttribute="trailing" constant="20" id="mmw-0i-eJb"/>
                             <constraint firstItem="MQp-71-f4Z" firstAttribute="top" secondItem="YgO-yc-H5M" secondAttribute="bottom" constant="8" id="q48-tq-Cfh">
-                                <variation key="widthClass=compact" constant="0.0"/>
+                                <variation key="widthClass=compact" constant="8"/>
                             </constraint>
-                            <constraint firstItem="79g-E0-Akm" firstAttribute="top" secondItem="oJF-zu-ljT" secondAttribute="bottom" constant="8" id="yzh-gQ-fQA"/>
+                            <constraint firstItem="79g-E0-Akm" firstAttribute="top" secondItem="oJF-zu-ljT" secondAttribute="bottom" constant="8" id="yzh-gQ-fQA">
+                                <variation key="heightClass=compact" constant="2"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YGA-4j-NBO"/>
+                                <exclude reference="q48-tq-Cfh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="2eD-ar-9lt"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="Cvb-9t-0eF"/>
+                                <include reference="YGA-4j-NBO"/>
+                                <exclude reference="mmw-0i-eJb"/>
+                                <include reference="q48-tq-Cfh"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Add Entry" id="ryf-q4-bZX">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0YO-Os-ROo">

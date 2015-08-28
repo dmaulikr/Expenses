@@ -26,6 +26,9 @@
 /* Class = "IBUILabel"; text = "Desciption"; ObjectID = "DWk-2J-wKT"; */
 "DWk-2J-wKT.text" = "Descripcion";
 
+/* Class = "IBUILabel"; text = "Date"; ObjectID = "SE5-uc-x3O"; */
+"SE5-uc-x3O.text" = "Fecha";
+
 /* Class = "IBUILabel"; text = "$800"; ObjectID = "EaD-Eg-Uqe"; */
 "EaD-Eg-Uqe.text" = "$800";
 

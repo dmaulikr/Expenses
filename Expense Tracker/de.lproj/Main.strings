@@ -17,6 +17,9 @@
 /* Class = "IBUILabel"; text = "Name"; ObjectID = "MWe-ys-k4E"; */
 "MWe-ys-k4E.text" = "Name";
 
+/* Class = "IBUILabel"; text = "Date"; ObjectID = "SE5-uc-x3O"; */
+"SE5-uc-x3O.text" = "Datum";
+
 /* Class = "IBUIBarButtonItem"; title = "Settings"; ObjectID = "MpP-tk-Jtw"; */
 "MpP-tk-Jtw.title" = "Einstellungen";
 
