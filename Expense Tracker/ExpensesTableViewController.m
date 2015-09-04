@@ -54,6 +54,7 @@
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
     self.navigationItem.title = self.account.name;
 }
 
