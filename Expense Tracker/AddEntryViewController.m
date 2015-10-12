@@ -30,7 +30,7 @@ THE SOFTWARE.*/
 #import "NSDate+Formatted.h"
 #import "StaticValues.h"
 
-@interface AddEntryViewController ()
+@interface AddEntryViewController()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *addSpendSegmented;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 @property (weak, nonatomic) IBOutlet UIButton *dateButton;
@@ -117,6 +117,11 @@ THE SOFTWARE.*/
         [self.descriptionTextField resignFirstResponder];
     }
     return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [textField selectAll:nil];
 }
 
 - (IBAction)dateSelect:(id)sender
