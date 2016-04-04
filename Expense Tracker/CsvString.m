@@ -76,7 +76,7 @@
 
 - (void)addDoubleCell:(double)doub
 {
-    [self addStringCell:[NSString stringWithFormat:@"%2.2f", doub]];
+    [self addStringCell:[[NSString stringWithFormat:@"%2.2f", doub] stringByReplacingOccurrencesOfString:@"." withString:@","]];
 }
 
 - (NSString*)addDateCell:(NSDate*)date

@@ -28,12 +28,12 @@ THE SOFTWARE.*/
 #import "Expense.h"
 
 typedef enum : NSUInteger {
-    Date,
-    DateDescending,
-    Name,
-    NameDescending,
-    Amount,
-    AmountDescending,
+    Date = 0,
+    DateDescending = 1,
+    Name = 2,
+    NameDescending = 3,
+    Amount = 4,
+    AmountDescending = 5,
 } aSortingMode;
 
 @interface Account : NSObject <NSCoding>

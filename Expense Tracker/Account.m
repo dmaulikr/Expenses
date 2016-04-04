@@ -193,7 +193,7 @@
 {
     switch (self.sortingMode) {
         case AmountDescending:
-            [self sortExpensesByMode:Name];
+            [self sortExpensesByMode:Date];
             break;
             
         default:

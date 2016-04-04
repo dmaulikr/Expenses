@@ -101,6 +101,7 @@
 
 - (IBAction)consolidateAllEntrys:(id)sender
 {
+    [self.nameField resignFirstResponder];
     [[[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"SETTINGS_CONSOLIDATE?", @"")
                                  delegate:self
                         cancelButtonTitle:NSLocalizedString(@"SETTINGS_CANCEL", @"")
@@ -110,6 +111,7 @@
 
 - (IBAction)deleteAllEntrys:(id)sender
 {
+    [self.nameField resignFirstResponder];
     [[[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"SETTINGS_DELETE?", @"")
                                  delegate:self
                         cancelButtonTitle:NSLocalizedString(@"SETTINGS_CANCEL", @"")
@@ -119,6 +121,7 @@
 
 - (IBAction)share:(id)sender
 {
+    [self.nameField resignFirstResponder];
     NSURL *csvFile = [self.account csvFile];
     if (csvFile) {
         [self presentViewController:[[UIActivityViewController alloc] initWithActivityItems:@[csvFile] applicationActivities:@[]] animated:YES completion:nil];
